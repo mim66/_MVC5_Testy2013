@@ -1,0 +1,53 @@
+﻿@model Master_Details.Models.CustomerMasterDetailsModel
+
+@{ViewBag.Title = "Customers"; }
+<h2>Customers</h2>
+
+<div style="width:100%; float:inherit;">
+   <div class="left" style="width:30%;">
+      <section id="CustomerMasterList">
+         <table>
+            @foreach (var item in Model.Customers) {
+               <tr>
+                  <td>
+                     <div>
+                        <h1>@item.CustomerID</h1>
+                        <ul>
+                           <li>@item.ContactName</li>
+                           <li>@item.Country</li>
+                           <li>@item.ContactTitle</li>
+                           <li>
+                              @Html.ActionLink(
+                              "View Details",
+                              "CustomerDetail",
+                              new { id = item.CustomerID },
+                              new { @class = "customer-details" })
+                        </li>
+                     </ul>
+                  </div>
+               </td>
+            </tr>
+            }
+         </table>
+      </section>
+   </div>
+
+   <div id="CustomerDetail" class="left" style="width: 70%;"></div>
+
+</div>
+
+
+@section scripts{
+   <script>
+      //The script read the modalbox element and define the
+      //modal on it using modal method and calls its "show state"
+      $(function () {
+         $('.customer-details').on('click', function (e) {
+            $.get($(this).prop('href'), function (response) {
+               $('#CustomerDetail').html(response)
+            });
+            e.preventDefault();
+         });
+      });
+   </script>
+}

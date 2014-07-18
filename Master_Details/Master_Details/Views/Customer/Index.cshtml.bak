@@ -1,0 +1,46 @@
+﻿@model Master_Details.Models.CustomerMasterDetailsModel
+
+@{   ViewBag.Title = "Index";}
+<h2>Customers</h2>
+
+<section id="CustomerMasterList" class="float-left">
+   <table>
+      @foreach (var item in Model.Customers)
+	   {
+		   <tr>
+            <td>
+               <div>
+                  <h1>@item.CustomerID</h1>
+                  <ul>
+                     <li>@item.ContactName</li>
+                     <li>@item.Country</li>
+                     <li>@item.ContactTitle</li>
+                     <li>@Html.ActionLink("View Details", "Index", new { id = item.CustomerID }) </li>
+                  </ul>
+               </div>
+            </td>
+         </tr> 
+	   }
+   </table>   
+</section>
+
+
+
+   @*@foreach (var item in Model) {
+      <tr>
+         <td>
+            @Html.DisplayFor(modelItem => item.CustomerID)
+         </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+         </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.ContactName)
+         </td>
+         <td>
+            @Html.ActionLink("Details", "Details", new { id = item.CustomerID })
+         </td>
+      </tr>
+   }
+
+</table>*@
