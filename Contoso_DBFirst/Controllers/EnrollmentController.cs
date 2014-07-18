@@ -49,7 +49,7 @@ namespace Contoso_DBFirst.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EnrollmentID,CourseID,StudentID,Grade34")] Enrollment enrollment)
+        public ActionResult Create([Bind(Include = "EnrollmentID,CourseID,StudentID,Grade")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace Contoso_DBFirst.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EnrollmentID,CourseID,StudentID,Grade34")] Enrollment enrollment)
+        public ActionResult Edit([Bind(Include = "EnrollmentID,CourseID,StudentID,Grade")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {

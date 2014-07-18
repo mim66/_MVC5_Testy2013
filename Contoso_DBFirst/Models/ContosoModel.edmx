@@ -20,7 +20,7 @@
           <Property Name="EnrollmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CourseID" Type="int" Nullable="false" />
           <Property Name="StudentID" Type="int" Nullable="false" />
-          <Property Name="Grade34" Type="decimal" Precision="3" Scale="2" />
+          <Property Name="Grade" Type="decimal" Precision="3" Scale="2" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -94,7 +94,7 @@
           <Property Name="StudentID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Course" Relationship="Self.FK_dbo_Enrollment_dbo_Course_CourseID" FromRole="Enrollment" ToRole="Course" />
           <NavigationProperty Name="Student" Relationship="Self.FK_dbo_Enrollment_dbo_Student_StudentID" FromRole="Enrollment" ToRole="Student" />
-          <Property Name="Grade34" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="Grade" Type="Decimal" Precision="3" Scale="2" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -165,7 +165,7 @@
           <EntitySetMapping Name="Enrollments">
             <EntityTypeMapping TypeName="ContosoUniversityModel.Enrollment">
               <MappingFragment StoreEntitySet="Enrollment">
-                <ScalarProperty Name="Grade34" ColumnName="Grade34" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
                 <ScalarProperty Name="EnrollmentID" ColumnName="EnrollmentID" />
                 <ScalarProperty Name="CourseID" ColumnName="CourseID" />
                 <ScalarProperty Name="StudentID" ColumnName="StudentID" />
