@@ -9,25 +9,33 @@
 
 namespace Contoso_DBFirst.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    
-    public partial class Student
-    {
-        public Student()
-        {
-            this.Enrollments = new HashSet<Enrollment>();
-        }
-    
-        public int ID { get; set; }
-        public string LastName { get; set; }
-        public string FirstMidName { get; set; }
-        
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString="{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<System.DateTime> EnrollmentDate { get; set; }
-    
-        public virtual ICollection<Enrollment> Enrollments { get; set; }
-    }
+   using System;
+   using System.Collections.Generic;
+   using System.ComponentModel.DataAnnotations;
+   //aby utworzyæ alias pola FirstMidName do nazwy FirstName =>
+   using System.ComponentModel.DataAnnotations.Schema;
+
+   public partial class Student
+   {
+      public Student()
+      {
+         this.Enrollments = new HashSet<Enrollment>();
+      }
+
+      public int ID { get; set; }
+
+      [StringLength(50, ErrorMessage = "To pole nie mo¿e byc d³u¿sze ni¿ 50 znaków...")]
+      public string LastName { get; set; }
+
+      //[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
+      [StringLength(50, ErrorMessage = "To pole nie mo¿e byc d³u¿sze ni¿ 50 znaków...")]
+      public string FirstMidName { get; set; }
+
+      [Required(ErrorMessage = "Prosze wpisaæ datê...")]
+      [DataType(DataType.Date)]
+      [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+      public Nullable<System.DateTime> EnrollmentDate { get; set; }
+
+      public virtual ICollection<Enrollment> Enrollments { get; set; }
+   }
 }
