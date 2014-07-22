@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Contoso_DBFirst.Models;
+//dodanie paginacji stron MVC
+using PagedList;
 
 namespace Contoso_DBFirst.Controllers
 {
@@ -17,12 +19,20 @@ namespace Contoso_DBFirst.Controllers
          
          
       // GET: Student
-      public ActionResult Index(string sortOrder, string searchString)
+      public ViewResult Index(string sortOrder, string currentFilter, string searchString, int? page)
       {  
          ViewBag.NameSortParm       = string.IsNullOrEmpty(sortOrder) ? "name_desc": "";
          ViewBag.FirstNameSortParm  = sortOrder == "FirstName" ? "firstName_desc" : "FirstName";
          ViewBag.DateSortParm       = sortOrder == "Date"      ? "date_desc"      : "Date";
          var students = from s in db.Students select s;
+
+         if (searchString != null) { 
+            page = 1;
+         }
+         else { 
+            searchString = currentFilter;
+         }
+         ViewBag.CurrentFilter = searchString;
 
          if (!String.IsNullOrEmpty(searchString)) { 
             students = students.Where(s=>s.LastName.ToUpper().Contains(searchString.ToUpper()) 
@@ -48,7 +58,10 @@ namespace Contoso_DBFirst.Controllers
                students = students.OrderBy(s => s.LastName);
                break;
          }
-         return View(students.ToList());
+
+         int pageSize = 3;
+         int pageNumber = (page ?? 1);
+         return View(students.ToPagedList(pageNumber, pageSize));
       }  
 
 
