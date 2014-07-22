@@ -11,18 +11,23 @@ using Contoso_DBFirst.Models;
 namespace Contoso_DBFirst.Controllers
 {
    public class StudentController : Controller
-   {
+   {     
       private ContosoUniversityEntities db = new ContosoUniversityEntities();
-
-
-
+         
+         
+         
       // GET: Student
-      public ActionResult Index(string sortOrder)
-      {
+      public ActionResult Index(string sortOrder, string searchString)
+      {  
          ViewBag.NameSortParm       = string.IsNullOrEmpty(sortOrder) ? "name_desc": "";
          ViewBag.FirstNameSortParm  = sortOrder == "FirstName" ? "firstName_desc" : "FirstName";
          ViewBag.DateSortParm       = sortOrder == "Date"      ? "date_desc"      : "Date";
          var students = from s in db.Students select s;
+
+         if (!String.IsNullOrEmpty(searchString)) { 
+            students = students.Where(s=>s.LastName.ToUpper().Contains(searchString.ToUpper()) 
+                                  || s.FirstMidName.ToUpper().Contains(searchString.ToUpper()));
+         }
          switch (sortOrder) {
             case "name_desc":
                students = students.OrderByDescending(s => s.LastName);
@@ -44,7 +49,7 @@ namespace Contoso_DBFirst.Controllers
                break;
          }
          return View(students.ToList());
-      }
+      }  
 
 
 
