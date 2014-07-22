@@ -190,6 +190,9 @@
     <Compile Include="Models\Enrollment.cs">
       <DependentUpon>ContosoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Grade.cs">
+      <DependentUpon>ContosoModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Student.cs">
       <DependentUpon>ContosoModel.tt</DependentUpon>

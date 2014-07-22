@@ -14,10 +14,36 @@ namespace Contoso_DBFirst.Controllers
    {
       private ContosoUniversityEntities db = new ContosoUniversityEntities();
 
+
+
       // GET: Student
-      public ActionResult Index()
+      public ActionResult Index(string sortOrder)
       {
-         return View(db.Students.ToList());
+         ViewBag.NameSortParm       = string.IsNullOrEmpty(sortOrder) ? "name_desc": "";
+         ViewBag.FirstNameSortParm  = sortOrder == "FirstName" ? "firstName_desc" : "FirstName";
+         ViewBag.DateSortParm       = sortOrder == "Date"      ? "date_desc"      : "Date";
+         var students = from s in db.Students select s;
+         switch (sortOrder) {
+            case "name_desc":
+               students = students.OrderByDescending(s => s.LastName);
+               break;
+            case "FirstName":
+               students = students.OrderBy(s => s.FirstMidName);
+               break;
+            case "firstName_desc":
+               students = students.OrderByDescending(s => s.FirstMidName);
+               break;
+            case "Date":
+               students = students.OrderBy(s => s.EnrollmentDate);
+               break;
+            case "date_desc":
+               students = students.OrderByDescending(s => s.EnrollmentDate);
+               break;
+            default:
+               students = students.OrderBy(s => s.LastName);
+               break;
+         }
+         return View(students.ToList());
       }
 
 
