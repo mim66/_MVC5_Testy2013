@@ -9,30 +9,24 @@
 
 namespace Contoso_DBFirst.Models
 {
-   using System;
-   using System.Data.Entity;
-   using System.Data.Entity.Infrastructure;
-   //using Contoso_DBFirst.DAL;
-   //using Contoso_DBFirst.Logging;
-   //using System.Data.Entity.Infrastructure.Interception;
-
-   public partial class ContosoUniversityEntities : DbContext
-   {
-      public ContosoUniversityEntities()
-         : base("name=ContosoUniversityEntities")
-      {
-      }
-
-      protected override void OnModelCreating(DbModelBuilder modelBuilder)
-      {
-         throw new UnintentionalCodeFirstException();
-      }
-
-      public virtual DbSet<Course> Courses { get; set; }
-      public virtual DbSet<Enrollment> Enrollments { get; set; }
-      public virtual DbSet<Student> Students { get; set; }
-
-      //DbInterception.Add(new SchoolInterceptorTransientErrors());
-      //DbInterception.Add(new SchoolInterceptorLogging());
-   }
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Infrastructure;
+    
+    public partial class ContosoUniversityEntities : DbContext
+    {
+        public ContosoUniversityEntities()
+            : base("name=ContosoUniversityEntities")
+        {
+        }
+    
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            throw new UnintentionalCodeFirstException();
+        }
+    
+        public virtual DbSet<Course> Courses { get; set; }
+        public virtual DbSet<Enrollment> Enrollments { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
+    }
 }

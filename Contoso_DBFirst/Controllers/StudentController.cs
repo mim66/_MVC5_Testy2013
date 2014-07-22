@@ -36,17 +36,17 @@ namespace Contoso_DBFirst.Controllers
 
          if (!String.IsNullOrEmpty(searchString)) { 
             students = students.Where(s=>s.LastName.ToUpper().Contains(searchString.ToUpper()) 
-                                  || s.FirstMidName.ToUpper().Contains(searchString.ToUpper()));
+                                  || s.FirstName.ToUpper().Contains(searchString.ToUpper()));
          }
          switch (sortOrder) {
             case "name_desc":
                students = students.OrderByDescending(s => s.LastName);
                break;
             case "FirstName":
-               students = students.OrderBy(s => s.FirstMidName);
+               students = students.OrderBy(s => s.FirstName);
                break;
             case "firstName_desc":
-               students = students.OrderByDescending(s => s.FirstMidName);
+               students = students.OrderByDescending(s => s.FirstName);
                break;
             case "Date":
                students = students.OrderBy(s => s.EnrollmentDate);
@@ -91,7 +91,7 @@ namespace Contoso_DBFirst.Controllers
       // To protect from overposting attacks, please enable the specific roperties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
       [HttpPost]
       [ValidateAntiForgeryToken]
-      public ActionResult Create([Bind(Include = "ID,LastName,FirstMidName,EnrollmentDate")] Student student)
+      public ActionResult Create([Bind(Include = "ID,LastName,FirstName,EnrollmentDate")] Student student)
       {
          try {
             if (ModelState.IsValid) {
@@ -130,7 +130,7 @@ namespace Contoso_DBFirst.Controllers
       // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
       [HttpPost]
       [ValidateAntiForgeryToken]
-      public ActionResult Edit([Bind(Include = "ID,LastName,FirstMidName,EnrollmentDate")] Student student)
+      public ActionResult Edit([Bind(Include = "ID,LastName,FirstName,EnrollmentDate")] Student student)
       {
          try {
             if (ModelState.IsValid) {
