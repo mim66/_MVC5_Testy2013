@@ -22,7 +22,8 @@ namespace Contoso_DBFirst.Controllers
       {
          IQueryable<EnrollmentDateGroup> data = 
                from s in db.Students 
-               group s by s.EnrollmentDate into dateGroup
+               group s by s.EnrollmentDate 
+               into dateGroup
                select new EnrollmentDateGroup(){
                   EnrollmentDate = dateGroup.Key,
                   StudentCount = dateGroup.Count()
