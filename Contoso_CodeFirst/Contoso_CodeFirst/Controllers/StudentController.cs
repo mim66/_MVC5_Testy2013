@@ -17,12 +17,23 @@ namespace ContosoUniversity.Controllers
 
 
       // GET: Student
-      public ActionResult Index(string sortOrder)
+      // sortowanie             
+      //public ActionResult Index(string sortOrder) 
+      // sortowanie, filtrowanie  
+      //public ActionResult Index(string sortOrder, string searchString)
+      public ActionResult Index(string sortOrder, string searchString)
       {
+         //sortowanie
          ViewBag.NameSortParm = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
          ViewBag.FirstSortParm = sortOrder == "FName" ? "fname_desc" : "FName";
          ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
          var students = from s in db.Students select s;
+         //filtrowanie
+         if (!string.IsNullOrEmpty(searchString)) { 
+            students = students.Where(s=>s.LastName.ToUpper().Contains(searchString.ToUpper()) 
+                                      || s.FirstMidName.ToUpper().Contains(searchString.ToUpper()) );
+         }
+         //sortowanie
          switch (sortOrder) {
             case "name_desc":
                students = students.OrderByDescending(s => s.LastName);

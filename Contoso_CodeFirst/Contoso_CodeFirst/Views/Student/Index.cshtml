@@ -3,9 +3,13 @@
 @{  ViewBag.Title = "Index";  }
 <h2>ViewBag.Title</h2>
 
-<p>
-   @Html.ActionLink("Create New", "Create")
-</p>
+<p>   @Html.ActionLink("Create New", "Create")</p>
+@using (Html.BeginForm()) {
+   <p>
+      Znajdź po nazwie: @Html.TextBox("SearchString")
+      <input type="submit" value="Szukaj" /></p>
+}
+
 <table class="table">
    <tr>
       <th>
