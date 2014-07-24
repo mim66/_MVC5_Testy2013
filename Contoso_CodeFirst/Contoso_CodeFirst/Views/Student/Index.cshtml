@@ -1,12 +1,15 @@
-﻿@model IEnumerable<ContosoUniversity.Models.Student>
+﻿@model PagedList.IPagedList<ContosoUniversity.Models.Student>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
-@{  ViewBag.Title = "Index";  }
+@{  ViewBag.Title = "Students";  }
 <h2>ViewBag.Title</h2>
 
 <p>   @Html.ActionLink("Create New", "Create")</p>
-@using (Html.BeginForm()) {
+
+@using (Html.BeginForm("Index" ,"Students", FormMethod.Get)) {
    <p>
-      Znajdź po nazwie: @Html.TextBox("SearchString")
+      Znajdź po nazwie: @Html.TextBox("SearchString", ViewBag.currentFilter as string)
       <input type="submit" value="Szukaj" /></p>
 }
 
@@ -42,5 +45,11 @@
       </td>
    </tr>
 }
-
 </table>
+
+<br />
+Strona @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) z
+@Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index",
+new { page, sortOrder = ViewBag.CurrentSort, currentFilter =
+ViewBag.CurrentFilter }))
