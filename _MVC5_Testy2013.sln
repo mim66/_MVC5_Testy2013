@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC5_ContosoSite", "MVC5_Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso_DBFirst", "Contoso_DBFirst\Contoso_DBFirst.csproj", "{505686CF-DCD5-43A4-8B26-37BEC6D7A8C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigrationsDemo", "MigrationsDemo\MigrationsDemo.csproj", "{DB9E076D-7EAD-4B87-93DF-E21607FDC583}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{505686CF-DCD5-43A4-8B26-37BEC6D7A8C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{505686CF-DCD5-43A4-8B26-37BEC6D7A8C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{505686CF-DCD5-43A4-8B26-37BEC6D7A8C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB9E076D-7EAD-4B87-93DF-E21607FDC583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB9E076D-7EAD-4B87-93DF-E21607FDC583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB9E076D-7EAD-4B87-93DF-E21607FDC583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB9E076D-7EAD-4B87-93DF-E21607FDC583}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

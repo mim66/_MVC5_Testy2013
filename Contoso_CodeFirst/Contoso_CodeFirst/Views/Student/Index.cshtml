@@ -3,16 +3,16 @@
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{  ViewBag.Title = "Students";  }
-<h2>ViewBag.Title</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>   @Html.ActionLink("Create New", "Create")</p>
 
-@using (Html.BeginForm("Index" ,"Students", FormMethod.Get)) {
+@using (Html.BeginForm("Index", "Student", FormMethod.Get)) {
    <p>
-      Znajdź po nazwie: @Html.TextBox("SearchString", ViewBag.currentFilter as string)
-      <input type="submit" value="Szukaj" /></p>
-}
-
+      Znajdź op nazwie: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+      <input type="submit" value="Szukaj" />
+   </p>
+} 
 <table class="table">
    <tr>
       <th>

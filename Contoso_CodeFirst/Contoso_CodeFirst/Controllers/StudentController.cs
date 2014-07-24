@@ -10,6 +10,8 @@ using ContosoUniversity.DAL;
 using ContosoUniversity.Models;
 //dodaje referencję do przestrzeni PagedList
 using PagedList;
+//for DBConfiguration
+using System.Data.Entity.Infrastructure;
 
 
 namespace ContosoUniversity.Controllers
@@ -31,7 +33,7 @@ namespace ContosoUniversity.Controllers
       ViewBag.NameSortParm = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
       ViewBag.FirstSortParm = sortOrder == "FName" ? "fname_desc" : "FName";
       ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
-      //paginacja
+      //  paginacja
       if (searchString != null) { 
         page = 1;
       }
@@ -39,14 +41,14 @@ namespace ContosoUniversity.Controllers
         searchString = currentFilter;
       }
       ViewBag.CurrentFilter = searchString;
-      //sortowanie
+      //  sortowanie
       var students = from s in db.Students select s;
-      //filtrowanie
+      //  filtrowanie
       if (!string.IsNullOrEmpty(searchString)) {
         students = students.Where(s => s.LastName.ToUpper().Contains(searchString.ToUpper())
                                   || s.FirstMidName.ToUpper().Contains(searchString.ToUpper()));
       }
-      //sortowanie
+      //  sortowanie
       switch (sortOrder) {
         case "name_desc":
           students = students.OrderByDescending(s => s.LastName);
@@ -67,9 +69,9 @@ namespace ContosoUniversity.Controllers
           students = students.OrderBy(s => s.LastName);
           break;
       }
-      //sortowanie i/lub filtrowanie
+      //  sortowanie i/lub filtrowanie
       //return View(students.ToList());
-      //paginacja
+      //  paginacja
       int pageSize = 4;
       int pageNumber = (page ?? 1);
       return View(students.ToPagedList(pageNumber, pageSize));
@@ -110,7 +112,7 @@ namespace ContosoUniversity.Controllers
           return RedirectToAction("Index");
         }
       }
-      catch (DataException dex) {
+      catch (RetryLimitExceededException /*DataException dex*/) {
         //Log the error (uncomment dex variable name and add a line here to write a log.
         ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
       }
@@ -145,7 +147,7 @@ namespace ContosoUniversity.Controllers
           return RedirectToAction("Index");
         }
       }
-      catch (DataException dev) {
+      catch (RetryLimitExceededException /*DataException dex*/) {
         //Log the error (uncomment dex variable name and add a line here to write a log.
         ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
       }
@@ -187,7 +189,7 @@ namespace ContosoUniversity.Controllers
         db.Entry(studentToDelete).State = EntityState.Deleted;
         db.SaveChanges();
       }
-      catch (DataException dev) {
+      catch (RetryLimitExceededException /*DataException dex*/) {
         //Log the error (uncomment dex variable name and add a line here to write a log.
         return RedirectToAction("Delete", new { id = id, saveChangesError = true });
       }
