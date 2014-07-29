@@ -161,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -168,6 +169,10 @@
     <Compile Include="Migrations\201407281300580_initial.cs" />
     <Compile Include="Migrations\201407281300580_initial.Designer.cs">
       <DependentUpon>201407281300580_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407290549383_AddMissionStatment.cs" />
+    <Compile Include="Migrations\201407290549383_AddMissionStatment.Designer.cs">
+      <DependentUpon>201407290549383_AddMissionStatment.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -298,6 +303,11 @@
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Departments\Create.cshtml" />
+    <Content Include="Views\Departments\Delete.cshtml" />
+    <Content Include="Views\Departments\Details.cshtml" />
+    <Content Include="Views\Departments\Edit.cshtml" />
+    <Content Include="Views\Departments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -312,6 +322,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201407281300580_initial.resx">
       <DependentUpon>201407281300580_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407290549383_AddMissionStatment.resx">
+      <DependentUpon>201407290549383_AddMissionStatment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

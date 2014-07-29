@@ -2,14 +2,19 @@
 Code First for Existing Database
 ------------------------------------
 -  Po utworzeniu modelu AdventureWorksContext należy włączyć Migrację dla tego kontextu:
-	Enable-Migrations -ContextTypeName AdventureWorksContext
+		Enable-Migrations -ContextTypeName AdventureWorksContext
 
 -	Utworzenie punktu początkowego z ignorowaniem zmian jakie istnieją już w bazie 
-		(zapis w modelu bazy)
-	add-migration initial -ignoreChanges
+	(zapis w modelu bazy)
+		add-migration initial -ignoreChanges
 
 -	zapisanie zmia do samej bazy 
-	update-database
+		update-database
 
-	 
+-  dodaję do tabeli Department kolumnę 
+		public string MissionStatement { get; set; }
+
+-	Zapisuje zmiany do bazy lokalnej i do zdalnej
+		add-migration AddMissionStatment
+		update-database
 
