@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso_DBFirst", "Contoso_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks", "AdventureWorks\AdventureWorks.csproj", "{D8AB9DBD-59B9-4ABE-8E94-CF2CCB8F9607}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso_RelatedData", "Contoso_RelatedData\Contoso_RelatedData.csproj", "{B72AF40C-558E-43D7-A842-2A922EC440AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D8AB9DBD-59B9-4ABE-8E94-CF2CCB8F9607}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8AB9DBD-59B9-4ABE-8E94-CF2CCB8F9607}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8AB9DBD-59B9-4ABE-8E94-CF2CCB8F9607}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B72AF40C-558E-43D7-A842-2A922EC440AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B72AF40C-558E-43D7-A842-2A922EC440AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B72AF40C-558E-43D7-A842-2A922EC440AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B72AF40C-558E-43D7-A842-2A922EC440AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
