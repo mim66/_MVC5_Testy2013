@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso_DBFirst", "Contoso_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks", "AdventureWorks\AdventureWorks.csproj", "{D8AB9DBD-59B9-4ABE-8E94-CF2CCB8F9607}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso_CodeFirst", "Contoso_CodeFirst\Contoso_CodeFirst\Contoso_CodeFirst.csproj", "{DF021AA1-3663-4A2F-A744-18A1DC469C02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoUniversity", "ContosoUniversity\ContosoUniversity.csproj", "{DF021AA1-3663-4A2F-A744-18A1DC469C02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
