@@ -24,7 +24,7 @@ namespace ContosoUniversity.Controllers
             var viewModel = new InstructorIndexData();
 
             viewModel.Instructors = db.Instructors
-                .Include(i => i.OfficeAssignment)
+                .Include(i => i.OfficeAssignment)  //Left Join w T-Sql
                 .Include(i => i.Courses.Select(c => c.Department))
                 .OrderBy(i => i.LastName);
 
@@ -39,17 +39,16 @@ namespace ContosoUniversity.Controllers
             {
                 ViewBag.CourseID = courseID.Value;
                 // Eager loading
-                //viewModel.Enrollments = viewModel.Courses.Where(
-                //    x => x.CourseID == courseID).Single().Enrollments;
-                // Explicit loading
-                var selectedCourse = viewModel.Courses.Where(x => x.CourseID == courseID).Single();
-                db.Entry(selectedCourse).Collection(x => x.Enrollments).Load();
-                foreach (Enrollment enrollment in selectedCourse.Enrollments)
-                {
-                    db.Entry(enrollment).Reference(x => x.Student).Load();
-                }
-
-                viewModel.Enrollments = selectedCourse.Enrollments;
+                viewModel.Enrollments = viewModel.Courses.Where(
+                    x => x.CourseID == courseID).Single().Enrollments;
+                //// Explicit loading
+                //var selectedCourse = viewModel.Courses.Where(x => x.CourseID == courseID).Single();
+                //db.Entry(selectedCourse).Collection(x => x.Enrollments).Load();
+                //foreach (Enrollment enrollment in selectedCourse.Enrollments)
+                //{
+                //    db.Entry(enrollment).Reference(x => x.Student).Load();
+                //}
+                //viewModel.Enrollments = selectedCourse.Enrollments;
             }
 
             return View(viewModel);
