@@ -1,15 +1,12 @@
 ﻿@model IEnumerable<ContosoUniversity.Models.Course>
-
-@{    ViewBag.Title = "Courses";  }
-
-<h2>Courses</h2>
+@{    ViewBag.Title = "Kursy";  }
+<h2>Kursy</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
-        CourseID
         <th>
             @Html.DisplayNameFor(model => model.CourseID)
         </th>
