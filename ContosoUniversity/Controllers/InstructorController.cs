@@ -54,6 +54,8 @@ namespace ContosoUniversity.Controllers
             return View(viewModel);
         }
 
+
+
         // GET: Instructor/Details/5
         public ActionResult Details(int? id)
         {
@@ -69,6 +71,8 @@ namespace ContosoUniversity.Controllers
             return View(instructor);
         }
 
+        
+        
         // GET: Instructor/Create
         public ActionResult Create()
         {
@@ -77,8 +81,7 @@ namespace ContosoUniversity.Controllers
         }
 
         // POST: Instructor/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for  more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,LastName,FirstMidName,HireDate")] Instructor instructor)
@@ -94,6 +97,8 @@ namespace ContosoUniversity.Controllers
             return View(instructor);
         }
 
+        
+        
         // GET: Instructor/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -102,8 +107,11 @@ namespace ContosoUniversity.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Instructor instructor = db.Instructors.Find(id);
-            if (instructor == null)
-            {
+            //Instructor instructor = db.Instructors
+            //    .Include(i => i.OfficeAssignment)
+            //    .Where(i => i.ID == id)
+            //    .Single();
+            if (instructor == null) {
                 return HttpNotFound();
             }
             ViewBag.ID = new SelectList(db.OfficeAssignments, "InstructorID", "Location", instructor.ID);
