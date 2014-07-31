@@ -1,7 +1,7 @@
 ﻿@model ContosoUniversity.ViewModels.InstructorIndexData
 
 @{
-    ViewBag.Title = "Instructors";
+    ViewBag.Title = "Instruktorzy";
 }
 
 <h2>Instructors</h2>
@@ -51,7 +51,7 @@
 </table>
 
 @if (Model.Courses != null) {
-    <h3>Courses Taught by Selected Instructor</h3>
+    <h3>Kursy powiązane z wybranym Instruktorem</h3>
     <table class="table">
         <tr>
             <th></th>
@@ -77,5 +77,21 @@
             </tr>
         }
     </table>
+}
 
+
+@if (Model.Enrollments != null) {
+    <h3>Studenci zapisani na wybrane kursy</h3>
+    <table class="table-bordered">
+        <tr>
+            <th>Nazwa</th>
+            <th>Ocena</th>
+        </tr>
+        @foreach(var item in Model.Enrollments){
+            <tr>
+                <td>@item.Student.FullName</td>
+                <td>@Html.DisplayFor(itemModel => item.Grade)</td>
+            </tr>
+        }
+    </table>
 }
