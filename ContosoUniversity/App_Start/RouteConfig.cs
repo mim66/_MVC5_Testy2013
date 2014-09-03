@@ -16,7 +16,7 @@ namespace ContosoUniversity
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Courses", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Instructor", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
