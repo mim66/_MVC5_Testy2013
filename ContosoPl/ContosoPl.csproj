@@ -168,13 +168,20 @@
     <Compile Include="Migrations\201408020059520_initial.Designer.cs">
       <DependentUpon>201408020059520_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201408021045584_MaxLengthOnNames.cs" />
+    <Compile Include="Migrations\201408021045584_MaxLengthOnNames.Designer.cs">
+      <DependentUpon>201408021045584_MaxLengthOnNames.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Instruktor.cs" />
     <Compile Include="Models\Kurs.cs" />
     <Compile Include="Models\Nabor.cs" />
+    <Compile Include="Models\PrzydzieloneBiuro.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\SzkolaContext.cs" />
+    <Compile Include="Models\Wydzial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -251,6 +258,9 @@
     <EmbeddedResource Include="Migrations\201408020059520_initial.resx">
       <DependentUpon>201408020059520_initial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408021045584_MaxLengthOnNames.resx">
+      <DependentUpon>201408021045584_MaxLengthOnNames.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -270,7 +280,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59383</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55461/</IISUrl>
+          <IISUrl>http://localhost:2003/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -52,7 +52,8 @@ namespace ContosoUniversity.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CourseID,Title,Credits,DepartmentID")] Course course) {
+        public ActionResult Create([Bind(Include = 
+            "CourseID,Title,Credits,DepartmentID")] Course course) {
             try {
                 if (ModelState.IsValid) {
                     db.Courses.Add(course);
@@ -92,7 +93,8 @@ namespace ContosoUniversity.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CourseID,Title,Credits,DepartmentID")] Course course) {
+        public ActionResult Edit([Bind(Include = 
+            "CourseID,Title,Credits,DepartmentID")] Course course) {
             try {
                 if (ModelState.IsValid) {
                     db.Entry(course).State = EntityState.Modified;

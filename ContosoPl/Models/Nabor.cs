@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ContosoPl.Models
 {
@@ -13,6 +12,8 @@ namespace ContosoPl.Models
         public int Id { get; set; }
         public int IdKursu { get; set; }
         public int IdStudenta { get; set; }
+
+        [DisplayFormat(NullDisplayText = "Brak oceny")]
         public Ocena? Ocena { get; set; }
 
         public virtual Kurs Kurs { get; set; }
