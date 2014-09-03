@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks", "Adventure
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso_Codefirst", "ContosoUniversity\Contoso_Codefirst.csproj", "{DF021AA1-3663-4A2F-A744-18A1DC469C02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoPl", "ContosoPl\ContosoPl.csproj", "{C3711F52-B4B5-4835-96C0-2C85B5B9BD7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{DF021AA1-3663-4A2F-A744-18A1DC469C02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF021AA1-3663-4A2F-A744-18A1DC469C02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF021AA1-3663-4A2F-A744-18A1DC469C02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3711F52-B4B5-4835-96C0-2C85B5B9BD7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3711F52-B4B5-4835-96C0-2C85B5B9BD7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3711F52-B4B5-4835-96C0-2C85B5B9BD7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3711F52-B4B5-4835-96C0-2C85B5B9BD7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
