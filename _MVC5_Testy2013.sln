@@ -15,6 +15,30 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso_Codefirst", "Contos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoPl", "ContosoPl\ContosoPl.csproj", "{C3711F52-B4B5-4835-96C0-2C85B5B9BD7F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Testy", "_Testy", "{667CC16E-7378-4CDB-9BE9-0A2CB579B266}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AsyncDemo", "http://localhost:52641", "{F4BD7CF4-5C12-48EA-8D1E-C8A0F9799DF1}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52641"
+		Debug.AspNetCompiler.PhysicalPath = "_Tests\AsyncDemo\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52641\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52641"
+		Release.AspNetCompiler.PhysicalPath = "_Tests\AsyncDemo\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52641\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "_Tests\AsyncDemo\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,8 +69,15 @@ Global
 		{C3711F52-B4B5-4835-96C0-2C85B5B9BD7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3711F52-B4B5-4835-96C0-2C85B5B9BD7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3711F52-B4B5-4835-96C0-2C85B5B9BD7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4BD7CF4-5C12-48EA-8D1E-C8A0F9799DF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4BD7CF4-5C12-48EA-8D1E-C8A0F9799DF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4BD7CF4-5C12-48EA-8D1E-C8A0F9799DF1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4BD7CF4-5C12-48EA-8D1E-C8A0F9799DF1}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F4BD7CF4-5C12-48EA-8D1E-C8A0F9799DF1} = {667CC16E-7378-4CDB-9BE9-0A2CB579B266}
 	EndGlobalSection
 EndGlobal
