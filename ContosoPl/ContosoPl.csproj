@@ -175,7 +175,6 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Instruktor.cs" />
     <Compile Include="Models\Kurs.cs" />
     <Compile Include="Models\Nabor.cs" />
     <Compile Include="Models\PrzydzieloneBiuro.cs" />

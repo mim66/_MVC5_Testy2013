@@ -11,7 +11,7 @@ namespace ContosoPl.Models
         public DbSet<Kurs>          Kursy { get; set; }
         public DbSet<Wydzial>       Wydzialy { get; set; }
         public DbSet<Nabor>         Nabory { get; set; }
-        public DbSet<Instruktor>    Instruktorzy { get; set; }
+        //public DbSet<Instruktor>    Instruktorzy { get; set; }
         public DbSet<Student>       Studenci { get; set; }
         public DbSet<PrzydzieloneBiuro> PrzydzieloneBiura { get; set; }
 
