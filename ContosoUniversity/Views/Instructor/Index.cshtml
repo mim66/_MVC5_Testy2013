@@ -15,11 +15,11 @@
         <th>First Name</th>
         <th>Hire Date</th>
         <th>Office</th>
+        <th>Courses</th>
         <th></th>
     </tr>
 
-    @foreach (var item in Model.Instructors)
-    {
+    @foreach (var item in Model.Instructors) {
         string selectedRow = "";
         if (item.ID == ViewBag.InstructorID) {
             selectedRow = "success";
@@ -37,6 +37,13 @@
             <td>
                 @if (item.OfficeAssignment != null) {
                     @item.OfficeAssignment.Location
+                }
+            </td>
+            <td>
+                @{
+                    foreach (var course in item.Courses) {
+                        @course.CourseID @: @course.Title <br />
+                    }
                 }
             </td>
             <td>
@@ -61,7 +68,7 @@
             <th>Budget</th>
         </tr>
 
-        @foreach(var item in Model.Courses){
+        @foreach (var item in Model.Courses) {
             string selectedRow = "";
             if (item.CourseID == ViewBag.CourseID) {
                 selectedRow = "success";
@@ -87,7 +94,7 @@
             <th>Nazwa</th>
             <th>Ocena</th>
         </tr>
-        @foreach(var item in Model.Enrollments){
+        @foreach (var item in Model.Enrollments) {
             <tr>
                 <td>@item.Student.FullName</td>
                 <td>@Html.DisplayFor(itemModel => item.Grade)</td>
