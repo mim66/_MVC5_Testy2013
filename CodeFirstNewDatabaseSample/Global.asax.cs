@@ -20,7 +20,7 @@ namespace CodeFirstNewDatabaseSample
             // Database.SetInitializer<BloggingContext>(new DatabaseInitializer());
             // New code
             Database.SetInitializer<BloggingContext>(new DropCreateDatabaseAlways<BloggingContext>());
-            Database.SetInitializer(new Initializer()); 
+            //Database.SetInitializer(new Initializer()); 
 
 
             AreaRegistration.RegisterAllAreas();

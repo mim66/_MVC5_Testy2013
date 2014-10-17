@@ -12,6 +12,6 @@ namespace ContosoPl.Models
         [Display(Name = "Adres Biura")]
         public string Adres { get; set; }
 
-        public virtual Instruktor Instruktor { get; set; }
+        //public virtual Instruktor Instruktor { get; set; }
     }
 }
