@@ -24,7 +24,7 @@ namespace ContosoPl.Models
 
         public int? IdInstruktora { get; set; }
 
-        //public virtual Instruktor Administrator { get; set; }
+        public virtual Instruktor Administrator { get; set; }
         public virtual ICollection<Kurs> Kursy { get; set; }
     }
 }

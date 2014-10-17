@@ -18,12 +18,11 @@ namespace ContosoPl.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            //modelBuilder.Entity<Kurs>() 
-            //    .HasMany(c => c.Instruktorzy).WithMany(i => i.Kursy)
-            //    .Map(t => t.MapLeftKey("IdKursu")
-            //    .MapRightKey("IdInstruktora")
-            //    .ToTable("KursInstruktor"));
-
+            modelBuilder.Entity<Kurs>() 
+                .HasMany(c => c.Instruktorzy).WithMany(i => i.Kursy)
+                .Map(t => t.MapLeftKey("IdKursu")
+                .MapRightKey("IdInstruktora")
+                .ToTable("KursInstruktor"));
         }
     }
 }

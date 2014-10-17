@@ -1,4 +1,4 @@
-Select d.DepartmentID, d.Name, d.Budget, d.StartDate, Instuctor=i.LastName + i.FirstName FROM Department d
+Select Id=d.DepartmentID, d.Name, d.Budget, d.StartDate, Instuctor=i.LastName + i.FirstName FROM Department d
 	Inner Join Instructor i ON d.InstructorID=i.Id
 
 /*

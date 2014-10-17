@@ -21,6 +21,6 @@ namespace ContosoPl.Models
 
         public virtual Wydzial Wydzial { get; set; }
         public virtual ICollection<Nabor> Nabory { get; set; }
-        //public virtual ICollection<Instruktor> Instruktorzy { get; set; }
+        public virtual ICollection<Instruktor> Instruktorzy { get; set; }
     }
 }
