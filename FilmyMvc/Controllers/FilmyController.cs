@@ -117,10 +117,9 @@ namespace FilmyMvc.Controllers
             return View(film);
         }
 
-        //
-        // GET: /Filmy/Delete/5
 
-        public ActionResult Delete(int id = 0)
+        // GET: /Filmy/Usun/5
+        public ActionResult Usun(int id = 0)
         {
             Film film = db.Filmy.Find(id);
             if (film == null)
@@ -130,12 +129,10 @@ namespace FilmyMvc.Controllers
             return View(film);
         }
 
-        //
-        // POST: /Filmy/Delete/5
-
-        [HttpPost, ActionName("Delete")]
+        // POST: /Filmy/Usun/5
+        [HttpPost, ActionName("Usun")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult PotwierdzUsuwanie(int id)
         {
             Film film = db.Filmy.Find(id);
             db.Filmy.Remove(film);
@@ -143,6 +140,15 @@ namespace FilmyMvc.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Usun(FormCollection fcNotUsed, int id = 0) {
+           Film film = db.Filmy.Find(id);
+           if (film == null) {
+              return HttpNotFound();
+           }
+           db.Filmy.Remove(film);
+           db.SaveChanges();
+           return RedirectToAction("Index");
+        }
 
 
         protected override void Dispose(bool disposing)

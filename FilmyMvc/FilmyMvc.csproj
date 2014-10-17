@@ -335,7 +335,7 @@
     <Content Include="Views\Filmy\Detale.cshtml" />
     <Content Include="Views\Filmy\Nowy.cshtml" />
     <Content Include="Views\Filmy\Edycja.cshtml" />
-    <Content Include="Views\Filmy\Delete.cshtml" />
+    <Content Include="Views\Filmy\Usun.cshtml" />
     <Content Include="Views\Filmy\Szukaj.cshtml" />
   </ItemGroup>
   <ItemGroup>
