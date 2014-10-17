@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace MvcTest
+namespace FilmyMvc
 {
    public class BundleConfig
    {

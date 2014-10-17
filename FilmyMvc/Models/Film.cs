@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace MvcTest.Models
+namespace FilmyMvc.Models
 {
    public class FilmContext : DbContext {
       public FilmContext() : base("FilmyDB") {

@@ -5,9 +5,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MvcTest.Models;
+using FilmyMvc.Models;
 
-namespace MvcTest.Controllers
+namespace FilmyMvc.Controllers
 {
     public class FilmyController : Controller
     {

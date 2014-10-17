@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MvcTest.Controllers
+namespace FilmyMvc.Controllers
 {
    public class HomeController : Controller
    {

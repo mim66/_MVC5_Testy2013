@@ -8,10 +8,10 @@ using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
-using MvcTest.Filters;
-using MvcTest.Models;
+using FilmyMvc.Filters;
+using FilmyMvc.Models;
 
-namespace MvcTest.Controllers
+namespace FilmyMvc.Controllers
 {
    [Authorize]
    [InitializeSimpleMembership]

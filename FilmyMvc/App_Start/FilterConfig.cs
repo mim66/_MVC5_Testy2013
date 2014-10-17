@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace MvcTest
+namespace FilmyMvc
 {
    public class FilterConfig
    {
