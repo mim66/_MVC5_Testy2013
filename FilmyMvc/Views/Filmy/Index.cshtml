@@ -23,6 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Cena)
         </th>
+       <th>
+            @Html.DisplayNameFor(model => model.Ocena)
+       </th>
         <th></th>
     </tr>
 
@@ -37,9 +40,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.Kategoria)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cena)
-        </td>
+       <td>
+          @Html.DisplayFor(modelItem => item.Cena)
+       </td>
+       <td>
+          @Html.DisplayFor(modelItem => item.Ocena)
+       </td>
         <td>
             @Html.ActionLink("Edycja", "Edycja", new { id=item.ID }) |
             @Html.ActionLink("Detale", "Detale", new { id=item.ID }) |

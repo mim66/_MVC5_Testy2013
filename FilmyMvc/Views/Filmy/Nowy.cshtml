@@ -37,13 +37,21 @@
             @Html.ValidationMessageFor(model => model.Kategoria)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Cena)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Cena)
-            @Html.ValidationMessageFor(model => model.Cena)
-        </div>
+       <div class="editor-label">
+          @Html.LabelFor(model => model.Cena)
+       </div>
+       <div class="editor-field">
+          @Html.EditorFor(model => model.Cena)
+          @Html.ValidationMessageFor(model => model.Cena)
+       </div>
+
+       <div class="editor-label">
+          @Html.LabelFor(model => model.Ocena)
+       </div>
+       <div class="editor-field">
+          @Html.EditorFor(model => model.Ocena)
+          @Html.ValidationMessageFor(model => model.Ocena)
+       </div>
 
         <p>
             <input type="submit" value="Nowy" />
