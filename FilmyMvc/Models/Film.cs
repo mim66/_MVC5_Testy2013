@@ -22,7 +22,8 @@ namespace FilmyMvc.Models
 
       [Required]
       public string     Tytul       { get; set; }
-      
+
+      //[DisplayFormat(DataFormatString = "{0:d}")]
       [DataType(DataType.Date)]
       public DateTime   DataWydania { get; set; }
 
@@ -30,6 +31,7 @@ namespace FilmyMvc.Models
       public string Kategoria { get; set; }
 
       [Range(1, 100)]
+      //[DisplayFormat(DataFormatString = "{0:c}")]
       [DataType(DataType.Currency)]
       public decimal Cena { get; set; }
       

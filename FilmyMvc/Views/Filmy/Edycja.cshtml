@@ -1,62 +1,70 @@
 ﻿@model FilmyMvc.Models.Film
 
 @{
-    ViewBag.Title = "Edycja";
+   ViewBag.Title = "Edycja";
 }
 
 <h2>Edycja</h2>
 
 @using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+   @Html.AntiForgeryToken()
+   @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>Film</legend>
+   <fieldset>
+      <legend>Film</legend>
 
-        @Html.HiddenFor(model => model.ID)
+      @Html.HiddenFor(model => model.ID)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Tytul)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Tytul)
-            @Html.ValidationMessageFor(model => model.Tytul)
-        </div>
+      <div class="editor-label">
+         @Html.LabelFor(model => model.Tytul)
+      </div>
+      <div class="editor-field">
+         @Html.EditorFor(model => model.Tytul)
+         @Html.ValidationMessageFor(model => model.Tytul)
+      </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DataWydania)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DataWydania)
-            @Html.ValidationMessageFor(model => model.DataWydania)
-        </div>
+      <div class="editor-label">
+         @Html.LabelFor(model => model.DataWydania)
+      </div>
+      <div class="editor-field">
+         @Html.EditorFor(model => model.DataWydania)
+         @Html.ValidationMessageFor(model => model.DataWydania)
+      </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Kategoria)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Kategoria)
-            @Html.ValidationMessageFor(model => model.Kategoria)
-        </div>
+      <div class="editor-label">
+         @Html.LabelFor(model => model.Kategoria)
+      </div>
+      <div class="editor-field">
+         @Html.EditorFor(model => model.Kategoria)
+         @Html.ValidationMessageFor(model => model.Kategoria)
+      </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Cena)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Cena)
-            @Html.ValidationMessageFor(model => model.Cena)
-        </div>
+      <div class="editor-label">
+         @Html.LabelFor(model => model.Cena)
+      </div>
+      <div class="editor-field">
+         @Html.EditorFor(model => model.Cena)
+         @Html.ValidationMessageFor(model => model.Cena)
+      </div>
 
-        <p>
-            <input type="submit" value="Zapisz" />
-        </p>
-    </fieldset>
+      <div class="editor-label">
+         @Html.LabelFor(model => model.Ocena)
+      </div>
+      <div class="editor-field">
+         @Html.EditorFor(model => model.Ocena)
+         @Html.ValidationMessageFor(model => model.Ocena)
+      </div>
+
+      <p>
+         <input type="submit" value="Zapisz" />
+      </p>
+   </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Powrót do listy", "Index")
+   @Html.ActionLink("Powrót do listy", "Index")
 </div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+   @Scripts.Render("~/bundles/jqueryval")
 }

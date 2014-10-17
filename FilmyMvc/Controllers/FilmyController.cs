@@ -70,6 +70,7 @@ namespace FilmyMvc.Controllers
             return View(film);
         }
 
+
         // GET: /Filmy/Nowy
         public ActionResult Nowy()
         {
@@ -89,6 +90,7 @@ namespace FilmyMvc.Controllers
 
             return View(film);
         }
+
 
         //
         // GET: /Filmy/Edycja/5
