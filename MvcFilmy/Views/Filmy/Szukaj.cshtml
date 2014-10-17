@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MvcTest.Models.Film>
+
+@{
+   ViewBag.Title = "Szukaj";
+}
+
+<h2>Szukaj</h2>
+
+<p>@Html.ActionLink("Nowy film", "Nowy")</p>
+@using (Html.BeginForm("Szukaj", "Filmy", FormMethod.Get)) {
+   <p>
+      Kategoria: @Html.DropDownList("_kategoria", "Wszystkie")  
+      Tytuł: @Html.TextBox("_szukaj")<br />
+      <input type="submit" value="Szukaj" />
+   </p>
+}
+@*@using (Html.BeginForm("Szukaj", "Filmy", FormMethod.Get)) {
+   <p>
+      Tytuł: @Html.TextBox("_szukaj")<br />
+      <input type="submit" value="Szukaj" />
+   </p>
+}*@
+
+<table>
+   <tr>
+      <th>
+         Tytul
+      </th>
+      <th>
+         DataWydania
+      </th>
+      <th>
+         Kategoria
+      </th>
+      <th>
+         Cena
+      </th>
+      <th></th>
+   </tr>
+
+   @foreach (var item in Model) {
+      <tr>
+         <td>
+            @Html.DisplayFor(modelItem => item.Tytul)
+         </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.DataWydania)
+         </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Kategoria)
+         </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Cena)
+         </td>
+         <td>
+            @Html.ActionLink("Edycja", "Edycja", new { id = item.ID }) |
+            @Html.ActionLink("Detale", "Detale", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+         </td>
+      </tr>
+   }
+
+</table>
