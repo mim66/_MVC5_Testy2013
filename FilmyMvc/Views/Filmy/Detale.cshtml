@@ -1,0 +1,43 @@
+﻿@model MvcTest.Models.Film
+
+@{
+    ViewBag.Title = "Detale";
+}
+
+<h2>Detale</h2>
+
+<fieldset>
+    <legend>Film</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tytul)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tytul)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataWydania)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataWydania)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Kategoria)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Kategoria)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cena)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cena)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edycja", "Edycja", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
