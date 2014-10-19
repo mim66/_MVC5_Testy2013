@@ -1,0 +1,17 @@
+﻿SQL Trigger for Insert into EmployeeInfos
+USE [_NHibernate]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TRIGGER [dbo].[Trigger_AddEmployee]
+   ON  [dbo].[Employees]
+   AFTER INSERT
+AS
+BEGIN
+Declare @tempEmpId int;
+Select @tempEmpId=@@IDENTITY;
+          SET NOCOUNT ON;
+          INSERT INTO EmployeeInfos values(@tempEmpId,'Not Set', 'Not Set', GetDate())
+END
