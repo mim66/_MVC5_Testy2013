@@ -1,0 +1,91 @@
+﻿@{
+   //Layout = null;
+   ViewBag.Title = "KnockoutJs client";
+}
+
+@*<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>*@
+
+<h2>KnockoutJS</h2>
+
+<div>
+   <p>Nazwa : <input data-bind="value: pokazNazwe" /></p>
+   <p>Wiek :  <input data-bind="value: pokazWiek" /></p>
+   <p>Nazwa i wiek : <input data-bind="value: pokazNazweWiek" /></p>
+   <button data-bind="click: ladujZSerwera">Ładuj z serwera</button>
+</div>
+
+<div>
+   <h2>Dane wprowadzone</h2>
+   <p>Podana nazwa: <input data-bind="value: podanaNazwa" /></p>
+   <p>Podany wiek: <input data-bind="value: podanyWiek" /></p>
+   <button data-bind="click: aktualizujLokalnie">Aktualizuj lokalnie</button>
+   <button data-bind="click: aktualizujNaSerwerze">Aktualizuj na serwerze</button>
+</div>
+
+<div>
+   <h2>KO zawartość</h2>
+   <pre data-bind="text: ko.toJSON($root, null, 2)"></pre>
+</div>
+
+<div>
+   <p><a href="http://www.codeproject.com/Tips/701995/Simplest-knockoutJS-and-MVC-demo">Simplest-knockoutJS-and-MVC-demo</a></p>
+</div>
+
+<script src="~/Scripts/knockout-3.2.0.js"></script>
+<script src="~/Scripts/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+   var OsobaViewModel = function (nazwa, wiek)   {
+      var self = this;
+      self.pokazNazwe = ko.observable(nazwa);
+      self.pokazWiek = ko.observable(wiek);
+      self.pokazNazweWiek = ko.computed(function(){
+         return self.pokazNazwe() + ", wiek" + self.pokazWiek();
+      }, self);
+
+      self.podanaNazwa = ko.observable("My Name");
+      self.podanyWiek = ko.observable("15");
+      self.aktualizujLokalnie = function () {
+         self.pokazNazwe(self.podanaNazwa());
+         self.pokazWiek(self.podanyWiek());
+      };
+   
+      self.ladujZSerwera = function () {
+         $.getJSON("/home/PobierzOsobe", function (data) {
+            self.updateThis(data);
+         });
+      };
+
+      self.aktualizujNaSerwerze = function () {
+         var data = "{ \"nazwa\" : \"" + self.podanaNazwa() +
+           "\", \"wiek\" : \"" + self.podanyWiek() + "\"}";
+         console.log(data);
+         $.post("/home/AktualizujOsobe", data, function (returnedData) {
+            self.updateThis(returnedData);
+         }, "json");
+      };
+
+      self.updateThis = function (jsonData) {
+         var jsonString = JSON.stringify(jsonData);
+         var parsed = JSON.parse(jsonString);
+         self.pokazNazwe(parsed.nazwa);
+         self.pokazWiek(parsed.wiek);
+      };
+   };
+
+   var mojViewModel = new OsobaViewModel("Jay Tan", "21");
+   ko.applyBindings(mojViewModel); // This makes Knockout get to work
+
+</script>
+
+

@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "_3_ProstaLista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ProstaLista</h2>
+
+<form data-bind="submit: dodajSlowo">
+   Nowe słowo:
+   <input data-bind='value: slowoDoDodania, valueUpdate: "afterkeydown"' />
+   <button type="submit" data-bind="enable: slowoDoDodania().length > 0">Dodaj</button>
+   <p>Twoje slowa:</p>
+   <select multiple="multiple" data-bind="options: slowa" style="width: 100px; height: 100%"> </select>
+</form>
+
+
+<script src="~/Scripts/jquery-2.1.1.min.js"></script>
+<script src="~/Scripts/knockout-3.2.0.js"></script>
+<script type="text/javascript">
+   var ProstaListaModel = function (slowa) {
+      this.slowa = ko.observableArray(slowa);
+      this.slowoDoDodania = ko.observable("");
+      this.dodajSlowo = function () {
+         if (this.slowoDoDodania() != "") {
+            this.slowa.push(this.slowoDoDodania()); // Adds the item. Writing to the "slowa" observableArray causes any associated UI to update.
+            this.slowoDoDodania(""); // Clears the text box, because it's bound to the "slowoDoDodania" observable
+         }
+      }.bind(this);  // Ensure that "this" is always this view model
+   };
+
+   ko.applyBindings(new ProstaListaModel(["Alpha", "Beta", "Gamma"]));
+</script>

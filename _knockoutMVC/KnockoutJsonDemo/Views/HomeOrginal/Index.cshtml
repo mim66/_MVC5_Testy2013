@@ -1,0 +1,74 @@
+﻿@{
+   ViewBag.Title = "KnockoutJs client";
+}
+
+<h2>KnockoutJs client</h2>
+
+<div>
+   <p>Name: <input data-bind='value: displayName' /></p>
+   <p>Age: <input data-bind='value: displayAge' /></p>
+   <p>Name Age: <input data-bind='value: displayNameAge' /></p>
+   <button data-bind='click: loadFromServer'>Load From Server</button>
+</div>
+
+<div>
+   <h2>Input</h2>
+   <p>Input Name: <input data-bind='value: inputName' /></p>
+   <p>Input Age: <input data-bind='value: inputAge' /></p>
+   <button data-bind='click: updateLocal'>Update Local</button>
+   <button data-bind='click: updateServer'>Update Server</button>
+</div>
+
+<div>
+   <h2>KO Content</h2>
+   <pre data-bind="text: ko.toJSON($root, null, 2)"></pre>
+</div>
+
+<div>
+   <p><a href="http://www.codeproject.com/Tips/701995/Simplest-knockoutJS-and-MVC-demo">Simplest-knockoutJS-and-MVC-demo</a></p>
+</div>
+
+
+<script src="~/Scripts/knockout-3.2.0.js"></script>
+<script src="~/Scripts/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+    var PersonViewModel = function(name, age) {
+        var self = this;
+        self.displayName = ko.observable(name);
+        self.displayAge = ko.observable(age);
+        self.displayNameAge = ko.computed(function() {
+            return self.displayName() + " age " + self.displayAge();
+        }, self);
+
+        self.inputName = ko.observable("My Name");
+        self.inputAge = ko.observable("15");
+        self.updateLocal = function() {
+            self.displayName(self.inputName());
+            self.displayAge(self.inputAge());
+        };
+
+        self.loadFromServer = function () {
+           $.getJSON("/HomeOrginal/GetPerson", function (data) {
+                self.updateThis(data);
+            });
+        };
+
+        self.updateServer = function() {
+            var data = "{ \"name\" : \"" + self.inputName() +
+              "\", \"age\" : \"" + self.inputAge() + "\"}";
+            console.log(data);
+            $.post("/HomeOrginal/UpdatePerson", data, function (returnedData) {
+                self.updateThis(returnedData);
+            }, "json");
+        };
+
+        self.updateThis = function(jsonData) {
+            var jsonString = JSON.stringify(jsonData);
+            var parsed = JSON.parse(jsonString);
+            self.displayName(parsed.Name);
+            self.displayAge(parsed.Age);
+        };
+    };
+    var myViewModel = new PersonViewModel("Jay Tan", "21");
+    ko.applyBindings(myViewModel); // This makes Knockout get to work
+</script>

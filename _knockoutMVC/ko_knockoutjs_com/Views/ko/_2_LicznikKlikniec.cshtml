@@ -1,0 +1,42 @@
+﻿
+@{
+   ViewBag.Title = "_2_LicznikKlikniec";
+   Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Licznik klikniec</h2>
+
+<div>Kliknąłeś <span data-bind="text: liczbaKlikniec">&nbsp;</span> razy</div>
+
+<button data-bind="click: klikniecie, disable: kliknalesZbytWieleRazy">Kliknij</button>
+
+<div data-bind="visible: kliknalesZbytWieleRazy">
+   Kliknales Zbyt Wiele Razy. Proszę zatrzymaj się przed rozpuszczeniem twoich palców
+   <button data-bind="click: zresetujKlikniecia">Zresetuj Klikniecia</button>
+</div>
+
+
+<script src="~/Scripts/jquery-2.1.1.min.js"></script>
+<script src="~/Scripts/knockout-3.2.0.js"></script>
+<script type="text/javascript">
+   var LicznikKlikniecViewModel = function () {
+      this.liczbaKlikniec = ko.observable(0);
+
+      this.klikniecie = function () {
+         this.liczbaKlikniec(this.liczbaKlikniec() + 1);
+      };
+
+      this.zresetujKlikniecia = function () {
+         this.liczbaKlikniec(0);
+      };
+
+      this.kliknalesZbytWieleRazy = ko.pureComputed(function () {
+         return this.liczbaKlikniec() >= 3;
+      }, this);
+
+   };
+
+   ko.applyBindings(new LicznikKlikniecViewModel());
+</script>
+
