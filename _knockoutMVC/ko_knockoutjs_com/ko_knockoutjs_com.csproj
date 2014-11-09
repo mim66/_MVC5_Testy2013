@@ -125,7 +125,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Menu.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -174,6 +173,8 @@
     <Content Include="Views\ko\_1_Hello.cshtml" />
     <Content Include="Views\ko\_2_LicznikKlikniec.cshtml" />
     <Content Include="Views\ko\_3_ProstaLista.cshtml" />
+    <Content Include="Views\ko\_4_Lista.cshtml" />
+    <Content Include="Views\ko\_5_KontrolaTypow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

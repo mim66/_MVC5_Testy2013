@@ -1,0 +1,108 @@
+﻿@{
+   ViewBag.Title = "_5_KontrolaTypow";
+   Layout = null;
+}
+
+<style>
+   body { font-family: arial; font-size: 14px; }
+   .liveExample { padding: 1em; background-color: #EEEEDD; border: 1px solid #CCC; max-width: 655px; }
+   .liveExample input { font-family: Arial; }
+   .liveExample b { font-weight: bold; }
+   .liveExample p { margin-top: 0.9em; margin-bottom: 0.9em; }
+   .liveExample select[multiple] { width: 100%; height: 8em; }
+   .liveExample h2 { margin-top: 0.4em; }
+
+   .readout { width: 17em; float: right; }
+   .readout td { width: 50%; }
+   tr { vertical-align: top; border:1px solid; }
+   td { padding: 0.2em 0.2em 0.6em 0.2em; border:1px solid; }
+   td.label { text-align: right; padding-right: 0.5em; border:1px solid;  }
+   input[type=radio] { margin: 0 0.25em 0 0.25em }
+</style>
+
+<div class="readout">
+   <h3>Co jest w modelu?</h3>
+   <table>
+      <tr>
+         <td class="label">Wartość tekstowa:</td>
+         <td data-bind="text: _tekst"></td>
+      </tr>
+      <tr>
+         <td class="label">Hasło:</td>
+         <td data-bind="text: _haslo"></td>
+      </tr>
+      <tr>
+         <td class="label">Wartośc logiczna:</td>
+         <td data-bind='text: _logiczna() ? "True" : "False"'></td>
+      </tr>
+      <tr>
+         <td class="label">Wybrana opcja</td>
+         <td data-bind="text: _wybranaOpcja"></td>
+      </tr>
+      <tr>
+         <td class="label">Multi-selected options:</td>
+         <td data-bind="text: _wybraneMultiOpcje"></td>
+      </tr>
+      <tr>
+         <td class="label">Radio button selection:</td>
+         <td data-bind="text: _wybraneRadio"></td>
+      </tr>
+   </table>
+</div>
+
+<h3>HTML controls</h3>
+<table>
+   <tr>
+      <td class="label">Wartość tekstowa (aktualizacja po zmianie):</td>
+      <td><input data-bind="value: _tekst" /></td>
+   </tr>
+   <tr>
+      <td class="label">Wartość tekstowa (aktualizacja przy keystroke):</td>
+      <td><input data-bind='value: _tekst, valueUpdate: "afterkeydown"' /></td>
+   </tr>
+   <tr>
+      <td class="label">Wartość tekstowa (wielowierszowa):</td>
+      <td><textarea data-bind="value: _tekst"> </textarea></td>
+   </tr>
+   <tr>
+      <td class="label">Hasło:</td>
+      <td><input type="password" data-bind="value: _haslo" /></td>
+   </tr>
+   <tr>
+      <td class="label">Checkbox:</td>
+      <td><input type="checkbox" data-bind="checked: _logiczna" /></td>
+   </tr>
+   <tr>
+      <td class="label">Drop-down list:</td>
+      <td><select data-bind="options: _opcje, value: _wybranaOpcja"></select></td>
+   </tr>
+   <tr>
+      <td class="label">Multi-select drop-down list:</td>
+      <td><select multiple="multiple" data-bind="options: _opcje, selectedOptions: _wybraneMultiOpcje"></select></td>
+   </tr>
+   <tr>
+      <td class="label">Radio buttons:</td>
+      <td>
+         <label><input type="radio" value="Alpha" data-bind="checked: _wybraneRadio" />Alpha</label>
+         <label><input type="radio" value="Beta" data-bind="checked: _wybraneRadio" />Beta</label>
+         <label><input type="radio" value="Gamma" data-bind="checked: _wybraneRadio" />Gamma</label>
+      </td>
+   </tr>
+</table>
+
+
+<script src="~/Scripts/jquery-2.1.1.min.js"></script>
+<script src="~/Scripts/knockout-3.2.0.js"></script>
+<script type="text/javascript">
+   var viewModel = {
+      _tekst : ko.observable("Czesc"),
+      _haslo : ko.observable("haslo"),
+      _logiczna : ko.observable(true),
+      _opcje : ["Alfa", "Beta", "Gamma"],
+      _wybranaOpcja : ko.observable("Gamma"),
+      _wybraneMultiOpcje : ko.observable(["Alfa"]),
+      _wybraneRadio : ko.observable("Beta")
+   };
+   ko.applyBindings(viewModel);
+</script>
+

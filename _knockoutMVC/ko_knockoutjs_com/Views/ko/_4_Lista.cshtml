@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "_3_ProstaLista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ProstaLista</h2>
+
+<form data-bind="submit: dodajSlowo">
+   Nowe słowo:
+   <input data-bind='value: slowoDoDodania, valueUpdate: "afterkeydown"' />
+   <button type="submit" data-bind="enable: slowoDoDodania().length > 0">Dodaj</button>
+</form>
+
+<p>Twoje slowa:</p>
+<select multiple="multiple" data-bind="options: slowa, selectedOptions: wybraneSlowa" 
+         style="width: 100%; height: 100px"> </select>
+<div>
+   <button data-bind="click: usunWybrane, enable: slowa().length>0">Usuń</button>
+   <button data-bind="click: sortuj, enable: slowa().length>1">Sortuj</button>
+</div>
+
+<script src="~/Scripts/jquery-2.1.1.min.js"></script>
+<script src="~/Scripts/knockout-3.2.0.js"></script>
+<script type="text/javascript">
+
+   var ListaViewModel = function () {
+      this.slowoDoDodania = ko.observable("");
+      this.slowa = ko.observableArray(["Frytki", "Jajka Benedykta", "Szynka", "Ser"]);
+      this.wybraneSlowa = ko.observableArray(["Szynka"]);
+
+      this.dodajSlowo = function () {
+         if ((this.slowoDoDodania() != "") && (this.slowa.indexOf(this.slowoDoDodania))) {
+            this.slowa.push(this.slowoDoDodania()); // Adds the item. Writing to the "slowa" observableArray causes any associated UI to update.
+            this.slowoDoDodania(""); // Clears the text box, because it's bound to the "slowoDoDodania" observable
+         }
+      };  // Ensure that "this" is always this view model
+   };
+
+   this.usunWybrane = function () {
+      this.slowa.removeAll(this.wybraneSlowa());
+      this.wybraneSlowa([]);  //wyczysc wybrane
+   };
+
+   this.sortuj = function () {
+      this.slowa.sort();
+   };
+
+   ko.applyBindings(new ListaViewModel());
+</script>

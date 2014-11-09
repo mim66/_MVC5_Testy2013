@@ -36,6 +36,11 @@ namespace ko_knockoutjs_com.Controllers
             return View();
         }
 
+        public ActionResult _5_KontrolaTypow()
+        {
+           return View();
+        }
+
 
 
         
