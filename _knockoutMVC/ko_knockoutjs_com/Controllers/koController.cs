@@ -41,7 +41,22 @@ namespace ko_knockoutjs_com.Controllers
            return View();
         }
 
+        public ActionResult _6_Kolekcje()
+        {
+           return View();
+        }
 
+        public ActionResult _7_TabelaZeStronicowaniem()
+        {
+           return View();
+        }
+
+        public ActionResult Test_KO()
+        {
+           return View();
+        }
+
+        
 
         
 

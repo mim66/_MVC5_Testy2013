@@ -1,0 +1,54 @@
+﻿@{
+   ViewBag.Title = "_6_Kolekcje";
+   Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kolekcje</h2>
+
+<h2>Ludzie</h2>
+<ul data-bind="foreach: ludzie">
+   <li>
+      <div>
+         <span data-bind="text: nazwa"></span> posiada <span data-bind="text: dzieci().length"> </span> dzieci:
+         <a href="#" data-bind="click: dodajDziecko">Dodaj dziecko</a>
+         <span class="renderTime" data-bind="visible: $root.pokazCzasRenderowania" >
+            (osoba renderowania w <span data-bind="text: new Date().getSeconds()"> </span> sekund)
+         </span>
+      </div>
+      <ul data-bind="foreach: dzieci">
+         <li>
+            <span data-bind="text: $data"> </span>
+            <span class="renderTime" data-bind="visible: $root.pokazCzasRenderowania">
+               (osoba renderowania w <span data-bind="text: new Date().getSeconds()"> </span> sekund)
+            </span>
+         </li>
+      </ul>
+   </li>
+</ul>
+<label><input data-bind="checked: pokazCzasRenderowania" type="checkbox" />Pokaż czas renderowania</label>
+
+
+<script src="~/Scripts/jquery-2.1.1.min.js"></script>
+<script src="~/Scripts/knockout-3.2.0.js"></script>
+<script type="text/javascript">
+   var Osoba = function (nazwa, dzieci) {
+      this.nazwa = nazwa;
+      this.dzieci = ko.observableArray(dzieci);
+
+      this.dodajDziecko = function () {
+         this.dzieci.push("Nowe dziecko")
+      }.bind(this);
+   }
+
+   var viewModel = {
+      ludzie: [
+         new Person("Annabelle", ["Arnie", "Anders", "Apple"]),
+         new Person("Bertie", ["Boutros-Boutros", "Brianna", "Barbie", "Bee-bop"]),
+         new Person("Charles", ["Cayenne", "Cleopatra"])
+      ],
+      pokazCzasRenderowania: ko.observable(false)
+   };
+   ko.applyBindings(viewModel);
+</script>
+
+
