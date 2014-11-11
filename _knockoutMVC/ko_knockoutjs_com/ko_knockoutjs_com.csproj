@@ -179,6 +179,7 @@
     <Content Include="Views\ko\_6_Kolekcje.cshtml" />
     <Content Include="Views\ko\Test_KO.cshtml" />
     <Content Include="Views\ko\_7_TabelaZeStronicowaniem.cshtml" />
+    <Content Include="Views\ko\_8_AnimowanePrzejscia.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
