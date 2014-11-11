@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "_02_NamedTempWithForeach";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Foreach option with Named template</h2>
+
+<h2>Participants</h2>
+Here are the participants:
+
+@*wersja 1*@
+<div data-bind="template: {name: 'person_template', foreach: osoby}"></div>
+<script type="text/html" id="person_template">
+   <h4 data-bind="text: nazwa"></h4>
+   <p>Kredyt: <span data-bind="text: kredyt"></span></p>
+</script>
+
+@*wersja 2*@
+@*<div data-bind="foreach: osoby">
+      <h3 data-bind="text: nazwa"></h3>
+      <p>Kredyt: <span data-bind="text: kredyt"></span></p>
+   </div>*@
+
+
+<script type="text/javascript">
+   var model = function () {
+      this.osoby = [
+         { nazwa: 'Monavi', kredyt: 1000 },
+         { nazwa: 'Rova', kredyt: 1300 },
+         { nazwa: 'Vona', kredyt: 1500 }
+      ]
+   }
+   ko.applyBindings(new model());
+</script>

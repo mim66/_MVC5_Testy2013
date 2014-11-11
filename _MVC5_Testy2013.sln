@@ -47,8 +47,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_knockoutMVC", "_knockoutMV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnockoutJsonDemo", "_knockoutMVC\KnockoutJsonDemo\KnockoutJsonDemo.csproj", "{401C60F1-F8EB-4C39-A04B-E1EBA3D5AB2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ko_knockoutjs_com_empty", "_knockoutMVC\ko_knockoutjs_com_empty\ko_knockoutjs_com_empty.csproj", "{FF640A3F-2941-46DE-866F-1E88C1E44141}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ko_knockoutjs_com", "_knockoutMVC\ko_knockoutjs_com\ko_knockoutjs_com.csproj", "{F19C7EAF-694B-49CB-8995-358044638AF1}"
 EndProject
 Global
@@ -97,10 +95,6 @@ Global
 		{401C60F1-F8EB-4C39-A04B-E1EBA3D5AB2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{401C60F1-F8EB-4C39-A04B-E1EBA3D5AB2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{401C60F1-F8EB-4C39-A04B-E1EBA3D5AB2A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FF640A3F-2941-46DE-866F-1E88C1E44141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF640A3F-2941-46DE-866F-1E88C1E44141}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF640A3F-2941-46DE-866F-1E88C1E44141}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF640A3F-2941-46DE-866F-1E88C1E44141}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F19C7EAF-694B-49CB-8995-358044638AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F19C7EAF-694B-49CB-8995-358044638AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F19C7EAF-694B-49CB-8995-358044638AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -112,7 +106,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F4BD7CF4-5C12-48EA-8D1E-C8A0F9799DF1} = {667CC16E-7378-4CDB-9BE9-0A2CB579B266}
 		{401C60F1-F8EB-4C39-A04B-E1EBA3D5AB2A} = {D9C206C0-CEC0-4F62-953B-B39B36051FF5}
-		{FF640A3F-2941-46DE-866F-1E88C1E44141} = {D9C206C0-CEC0-4F62-953B-B39B36051FF5}
 		{F19C7EAF-694B-49CB-8995-358044638AF1} = {D9C206C0-CEC0-4F62-953B-B39B36051FF5}
 	EndGlobalSection
 EndGlobal

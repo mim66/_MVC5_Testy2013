@@ -113,6 +113,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\koController.cs" />
+    <Compile Include="Controllers\TemplatesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,6 +181,8 @@
     <Content Include="Views\ko\Test_KO.cshtml" />
     <Content Include="Views\ko\_7_TabelaZeStronicowaniem.cshtml" />
     <Content Include="Views\ko\_8_AnimowanePrzejscia.cshtml" />
+    <Content Include="Views\Templates\_01_NamedTemplate.cshtml" />
+    <Content Include="Views\Templates\_02_NamedTempWithForeach.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -6,5 +6,37 @@
 
 <h2>Animowane Przejscia - Animated trasitions</h2>
 
+<div>
+   <h2>Planety</h2>
+   <label><input type="checkbox" data-bind="checked: pokazZaawansowaneOpcje" />Pokaz zaawansowane opcje</label>
+   
+   <div data-bind="template: { foreach: planetyDoPokazania, beforeRemove: ukryjPlanety, afterAdd: pokazPlanety}">
+      @*<div data-bind="attr: {'class' : 'planet' + type}, text: name "></div>*@
+   </div>
+
+</div>
 
 
+<script type="text/javascript">
+   var ModelPlanet = function () {
+      this.planets = ko.observableArray([
+          { name: "Mercury", type: "rock" },
+          { name: "Venus", type: "rock" },
+          { name: "Earth", type: "rock" },
+          { name: "Mars", type: "rock" },
+          { name: "Jupiter", type: "gasgiant" },
+          { name: "Saturn", type: "gasgiant" },
+          { name: "Uranus", type: "gasgiant" },
+          { name: "Neptune", type: "gasgiant" }
+      ]);
+
+      this.pokazZaawansowaneOpcje = ko.observable(false);
+
+      this.planetyDoPokazania = ko.computed(function () {
+         return this.planets();
+      }, this);
+
+   };
+
+   ko.applyBindings(new ModelPlanet());
+</script>
