@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
-   <class         name="NHibernateWebSample.Departments, NHibernateWebSample" table="Departments">
-      <id         name="DepId"   column="DepId"    type="String">
-         <generator class="assigned" />
-      </id>
-      <property   name="DepName" column="DepName"  type="String" length="30"/>
-   </class>
-</hibernate-mapping>
