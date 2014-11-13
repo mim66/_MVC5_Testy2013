@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "_05_DinamicallyChoosingTemplate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Dinamically Choosing which Template is used</h2>
+
+
+<ul data-bind="template: {name: displayMode, foreach: employees }"></ul>
+
+
+<script type="text/javascript">
+   var viewModel = {
+      employees: ko.observableArray([
+         { name: "Kari", active: ko.observable(true) },
+         { name: "Brynn", active: ko.observable(false) },
+         { name: "Nora", active: ko.observable(false) }
+      ]),
+      displayMode: function (employee) {
+         //initially 'Kari' uses the active template, while the other use 'inactive'
+         return employee.active() ? "active" : "inactive";
+      }
+   };
+
+   //....then later
+   viewModel.employees()[1].active(true);
+   // Now "Brynn" is also rendered using the "active" template.
+
+</script>

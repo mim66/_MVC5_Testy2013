@@ -145,6 +145,8 @@
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.tmpl.js" />
+    <Content Include="Scripts\jquery.tmpl.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -157,6 +159,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\underscore.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -183,6 +187,13 @@
     <Content Include="Views\ko\_8_AnimowanePrzejscia.cshtml" />
     <Content Include="Views\Templates\_01_NamedTemplate.cshtml" />
     <Content Include="Views\Templates\_02_NamedTempWithForeach.cshtml" />
+    <Content Include="Views\Templates\_03_UsingASWithForeach.cshtml" />
+    <Content Include="Views\Templates\Test_Template.cshtml" />
+    <Content Include="Views\Templates\_04_Using_afterRender_afterAdd_beforeRemove.cshtml" />
+    <Content Include="Views\Templates\_05_DinamicallyChoosingTemplate.cshtml" />
+    <Content Include="Views\Templates\_06_jQuery_tmpl.cshtml" />
+    <Content Include="Views\Templates\_07_Underscore_js_template.cshtml" />
+    <Content Include="Scripts\underscore.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -19,8 +19,35 @@ namespace ko_knockoutjs_com.Controllers
          return View();
       }
 
+      public ActionResult _03_UsingASWithForeach()
+      {
+         return View();
+      }
 
-      public ActionResult Test_KO()
+      public ActionResult _04_Using_afterRender_afterAdd_beforeRemove()
+      {
+         return View();
+      }
+
+      public ActionResult _05_DinamicallyChoosingTemplate()
+      {
+         return View();
+      }
+
+      public ActionResult _06_jQuery_tmpl()
+      {
+         return View();
+      }
+      
+      public ActionResult _07_Underscore_js_template()
+      {
+         return View();
+      }
+      
+      
+
+      
+      public ActionResult Test_Template()
       {
          return View();
       }

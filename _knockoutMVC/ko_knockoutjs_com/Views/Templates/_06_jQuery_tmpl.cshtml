@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "_06_jQuery_tmpl";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Using jQuery.tmpl, an external string-based template engine</h2>
+
+
+<h1>People</h1>
+<div data-bind="template: 'peopleList'"></div>
+
+<script type="text/html" id="peopleList">
+   {{each people}}
+   <p>
+      <b>${name}</b> is ${age} years old
+   </p>
+   {{/each}}
+</script>
+
+<script src="~/Scripts/jquery.tmpl.min.js"></script>
+<script type="text/javascript">
+   var viewModel = {
+      people: ko.observableArray([
+          { name: 'Rod', age: 123 },
+          { name: 'Jane', age: 125 },
+      ])
+   }
+   ko.applyBindings(viewModel);
+</script>
