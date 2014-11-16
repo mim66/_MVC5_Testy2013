@@ -197,6 +197,8 @@
     <Content Include="Scripts\underscore.min.map" />
     <Content Include="Views\Detailed\_1_ContactEditor.cshtml" />
     <Content Include="Views\Detailed\Test_KO.cshtml" />
+    <Content Include="Views\Detailed\_02_GridEditor.cshtml" />
+    <Content Include="Views\Detailed\_03_SchoppingCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

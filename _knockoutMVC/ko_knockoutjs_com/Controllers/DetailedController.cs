@@ -14,6 +14,16 @@ namespace ko_knockoutjs_com.Controllers
          return View();
       }
 
+      public ActionResult _02_GridEditor()
+      {
+         return View();
+      }
+
+      public ActionResult _03_SchoppingCart()
+      {
+         return View();
+      }
+
       public ActionResult Test_KO()
       {
          return View();
