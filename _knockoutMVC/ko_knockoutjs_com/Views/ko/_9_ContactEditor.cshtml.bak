@@ -1,6 +1,7 @@
-﻿@{
-   ViewBag.Title = "Test_KO";
-   Layout = "~/Views/Shared/_Layout.cshtml";
+﻿
+@{
+    ViewBag.Title = "_9_ContactEditor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style>
    body { font-family: arial; font-size: 14px; }
@@ -17,16 +18,16 @@
    .liveExample TD A { font-size: 0.8em; text-decoration: none; }
    .liveExample table.contactsEditor > tbody > TR { border-bottom: 1px solid silver; }
    .liveExample td input { width: 8em; }
-
    li { list-style-type: disc; margin-left: 20px; }
+   
+   /*dodane*/
+   .liveExample textarea { max-width: 600px;}
 </style>
 
-<h2>Test_KO</h2>
-
-
+<h2>_9_ContactEditor</h2>
 
 <div class='liveExample'>
-   <h2>Contacts</h2>
+   <h3>Kontakty</h3>
    <div id='contactsList'>
       <table class='contactsEditor'>
          <tr>
@@ -62,7 +63,7 @@
       <button data-bind='click: addContact'>Add a contact</button>
       <button data-bind='click: save, enable: contacts().length > 0'>Save to JSON</button>
    </p>
-   <textarea data-bind='value: lastSavedJson' rows='5' cols='60' disabled='disabled'> </textarea>
+   <textarea data-bind='value: lastSavedJson' rows='5' cols='60' disabled='disabled' style='width: 500px' ></textarea>
 </div>
 
 <script>
@@ -105,11 +106,11 @@
       };
 
       self.removePhone = function (phone) {
-         $.each(self.contacts(), function () { this.phones.remove(phone) })
+         $.each(self.contacts(), function () { self.phones.remove(phone) });
       };
 
       self.save = function () {
-         self.lastSavedJson(JSON.stringify(ko.toJS(self.contacts), null, 2));
+         self.lastSavedJson(JSON.stringify(ko.toJS(self.contacts), null, 3));
       };
 
       self.lastSavedJson = ko.observable("")

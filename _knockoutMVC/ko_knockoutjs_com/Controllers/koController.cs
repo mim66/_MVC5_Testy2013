@@ -50,8 +50,13 @@ namespace ko_knockoutjs_com.Controllers
         {
            return View();
         }
-         
+
         public ActionResult _8_AnimowanePrzejscia()
+        {
+           return View();
+        }
+
+        public ActionResult _9_ContactEditor()
         {
            return View();
         }

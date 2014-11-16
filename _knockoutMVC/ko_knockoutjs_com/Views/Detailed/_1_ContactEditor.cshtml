@@ -1,7 +1,11 @@
-﻿@{
-   ViewBag.Title = "Test_KO";
-   Layout = "~/Views/Shared/_Layout.cshtml";
+﻿
+@{
+    ViewBag.Title = "_1_ContactEditor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h2>Contact Editor</h2>
+
 <style>
    body { font-family: arial; font-size: 14px; }
 
@@ -17,15 +21,14 @@
    .liveExample TD A { font-size: 0.8em; text-decoration: none; }
    .liveExample table.contactsEditor > tbody > TR { border-bottom: 1px solid silver; }
    .liveExample td input { width: 8em; }
-
    li { list-style-type: disc; margin-left: 20px; }
+   
+   /*dodane*/
+   .liveExample textarea { max-width: 600px;}
 </style>
 
-<h2>Test_KO</h2>
-
-
-
 <div class='liveExample'>
+
    <h2>Contacts</h2>
    <div id='contactsList'>
       <table class='contactsEditor'>
@@ -62,21 +65,23 @@
       <button data-bind='click: addContact'>Add a contact</button>
       <button data-bind='click: save, enable: contacts().length > 0'>Save to JSON</button>
    </p>
+
    <textarea data-bind='value: lastSavedJson' rows='5' cols='60' disabled='disabled'> </textarea>
+
 </div>
 
 <script>
    var initialData = [
-       {
-          firstName: "Danny", lastName: "LaRusso", phones: [
-            { type: "Mobile", number: "(555) 121-2121" },
-            { type: "Home", number: "(555) 123-4567" }]
-       },
-       {
-          firstName: "Sensei", lastName: "Miyagi", phones: [
-            { type: "Mobile", number: "(555) 444-2222" },
-            { type: "Home", number: "(555) 999-1212" }]
-       }
+      {
+         firstName: "Danny", lastName: "LaRusso", phones: [
+           { type: "Mobile", number: "(555) 121-2121" },
+           { type: "Home", number: "(555) 123-4567" }]
+      },
+      {
+         firstName: "Sensei", lastName: "Miyagi", phones: [
+           { type: "Mobile", number: "(555) 444-2222" },
+           { type: "Home", number: "(555) 999-1212" }]
+      }
    ];
 
    var ContactsModel = function (contacts) {
@@ -109,7 +114,7 @@
       };
 
       self.save = function () {
-         self.lastSavedJson(JSON.stringify(ko.toJS(self.contacts), null, 2));
+         self.lastSavedJson(JSON.stringify(ko.toJS(self.contacts), null, 0/*2*/));
       };
 
       self.lastSavedJson = ko.observable("")

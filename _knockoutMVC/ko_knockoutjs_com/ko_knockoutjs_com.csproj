@@ -111,6 +111,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DetailedController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\koController.cs" />
     <Compile Include="Controllers\TemplatesController.cs" />
@@ -194,6 +195,8 @@
     <Content Include="Views\Templates\_06_jQuery_tmpl.cshtml" />
     <Content Include="Views\Templates\_07_Underscore_js_template.cshtml" />
     <Content Include="Scripts\underscore.min.map" />
+    <Content Include="Views\Detailed\_1_ContactEditor.cshtml" />
+    <Content Include="Views\Detailed\Test_KO.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -35,6 +35,8 @@
             </div>
          </div>
       </div>*@
+   @*<li><a href="/Home/About">About</a></li>*@
+
 
    <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -49,7 +51,7 @@
          <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                <li class="dropdown">
-                  <a tabindex="0" data-toggle="dropdown">Ćwiczenia z KO<span class="caret"></span></a>
+                  <a tabindex="0" data-toggle="dropdown">KO first examples<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                      <li>@Html.ActionLink("Hello", "_1_Hello", "ko")</li>
                      <li>@Html.ActionLink("Licznik klikniec", "_2_LicznikKlikniec", "ko")</li>
@@ -59,14 +61,16 @@
                      <li>@Html.ActionLink("Kolekcje", "_6_Kolekcje", "ko")</li>
                      <li>@Html.ActionLink("Tabela Ze Stronicowaniem", "_7_TabelaZeStronicowaniem", "ko")</li>
                      <li>@Html.ActionLink("Animowane Przejscia", "_8_AnimowanePrzejscia", "ko")</li>
-
                      <li>@Html.ActionLink("Test_KO", "Test_KO", "ko")</li>
                   </ul>
                </li>
-               @*<li><a href="/Home/About">About</a></li>*@
-               @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
-            </ul>
-            <ul class="nav navbar-nav">
+               <li class="dropdown">
+                  <a tabindex="0" data-toggle="dropdown">Detailed examples<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                     <li><a href="/Detailed/_1_ContactEditor">Contact editor</a></li>
+                     <li>@Html.ActionLink("Test_KO", "Test_KO", "Detailed")</li>
+                  </ul>
+               </li>
                <li class="dropdown">
                   <a tabindex="0" data-toggle="dropdown">Templates<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
