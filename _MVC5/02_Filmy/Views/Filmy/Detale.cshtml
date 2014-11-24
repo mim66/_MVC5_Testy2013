@@ -1,10 +1,10 @@
 ﻿@model _02_Filmy.Models.Film
 
 @{
-    ViewBag.Title = "Details";
+   ViewBag.Title = "Detale";
 }
 
-<h2>Details</h2>
+<h2>Detale</h2>
 
 <div>
     <h4>Film</h4>
@@ -45,6 +45,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edycja", "Edycja", new { id = Model.ID }) |
+    @Html.ActionLink("Powrót do listy", "Index")
 </p>

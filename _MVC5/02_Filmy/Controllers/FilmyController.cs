@@ -20,8 +20,8 @@ namespace _02_Filmy.Controllers
             return View(db.Filmy.ToList());
         }
 
-        // GET: Filmy/Szczegoly/5
-        public ActionResult Szczegoly(int? id)
+        // GET: Filmy/Detale/5
+        public ActionResult Detale(int? id)
         {
             if (id == null)
             {

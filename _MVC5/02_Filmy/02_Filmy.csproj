@@ -234,7 +234,7 @@
     <Content Include="Views\WitajSwiecie\Powitanie.cshtml" />
     <Content Include="Views\Filmy\Nowy.cshtml" />
     <Content Include="Views\Filmy\Usun.cshtml" />
-    <Content Include="Views\Filmy\Szczegoly.cshtml" />
+    <Content Include="Views\Filmy\Detale.cshtml" />
     <Content Include="Views\Filmy\Edycja.cshtml" />
     <Content Include="Views\Filmy\Index.cshtml" />
   </ItemGroup>
@@ -266,7 +266,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55691</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2007/</IISUrl>
+          <IISUrl>http://localhost:2002/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
