@@ -11,39 +11,23 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Tytul)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataWydania)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Kategoria)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cena)
-        </th>
+        <th>            @Html.DisplayNameFor(model => model.Tytul)        </th>
+        <th>            @Html.DisplayNameFor(model => model.DataWydania)        </th>
+        <th>            @Html.DisplayNameFor(model => model.Kategoria)        </th>
+        <th>            @Html.DisplayNameFor(model => model.Cena)        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tytul)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataWydania)                      
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Kategoria)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cena)
-        </td>
+        <td>            @Html.DisplayFor(modelItem => item.Tytul)        </td>
+        <td>            @Html.DisplayFor(modelItem => item.DataWydania)                              </td>
+        <td>            @Html.DisplayFor(modelItem => item.Kategoria)        </td>
+        <td>            @Html.DisplayFor(modelItem => item.Cena)        </td>
         <td>
             @Html.ActionLink("Edycja", "Edycja", new { id = item.ID }) |
             @Html.ActionLink("Detale", "Detale", new { id = item.ID }) |
-            @Html.ActionLink("Usuń", "Usun", new { id=item.ID })
+            @Html.ActionLink("Usuń", "Usun",     new { id=item.ID })
         </td>
     </tr>
 }

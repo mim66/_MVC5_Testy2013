@@ -25,8 +25,7 @@ namespace _02_Filmy
                    "~/Scripts/respond.js"));
 
          bundles.Add(new StyleBundle("~/Content/css").Include(
-                   "~/Content/bootstrap-submenu.min.css",
-                   "~/Content/bootstrap.css",
+                   "~/Content/bootstrap-submenu.css",
                    "~/Content/bootstrap.css",
                    "~/Content/site.css"));
 

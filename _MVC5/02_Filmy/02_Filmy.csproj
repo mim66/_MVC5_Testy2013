@@ -175,6 +175,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\02_Filmy.mdf" />
+    <Content Include="App_Data\02_Filmy_log.ldf">
+      <DependentUpon>02_Filmy.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-submenu.css" />
     <Content Include="Content\bootstrap-submenu.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -238,9 +242,7 @@
     <Content Include="Views\Filmy\Edycja.cshtml" />
     <Content Include="Views\Filmy\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
