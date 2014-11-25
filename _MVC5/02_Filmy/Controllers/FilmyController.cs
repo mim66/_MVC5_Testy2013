@@ -58,6 +58,7 @@ namespace _02_Filmy.Controllers
             return View(film);
         }
 
+
         // GET: Filmy/Edycja/5
         public ActionResult Edycja(int? id)
         {
@@ -74,8 +75,7 @@ namespace _02_Filmy.Controllers
         }
 
         // POST: Filmy/Edycja/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edycja([Bind(Include = "ID,Tytul,DataWydania,Kategoria,Cena")] Film film)

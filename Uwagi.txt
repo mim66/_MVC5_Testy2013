@@ -1,0 +1,24 @@
+
+**************************************
+
+**************************************
+
+**************************************
+
+**************************************
+
+
+**************************************
+Aby korzystaæ z lokalnych ustawieñ jêzykowych zainstaluj z nuGet'a jquery-globalize
+Install-Package jquery-globalize
+
+**************************************
+@Html.AntiForgeryToken()  generates a hidden form anti-forgery token that must match in the Edit method of the Movies controller.
+You can read more about Cross-site request forgery (also known as XSRF or CSRF) in my tutorial XSRF/CSRF Prevention in MVC.
+
+<h2>Edycja</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+

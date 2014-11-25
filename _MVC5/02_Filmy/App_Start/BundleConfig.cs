@@ -24,6 +24,12 @@ namespace _02_Filmy
                    "~/Scripts/bootstrap.js",
                    "~/Scripts/respond.js"));
 
+         bundles.Add(new ScriptBundle("~/bundles/globalization").Include(
+                  /* ,"~/Scripts/globalize.culture.*" */
+                  /* ,"~/Scripts/globalize.initialize.js" */
+                  "~/Scripts/globalize.js",
+                  "~/Scripts/jquery.validate.globalize.js"));
+                   
          bundles.Add(new StyleBundle("~/Content/css").Include(
                    "~/Content/bootstrap-submenu.css",
                    "~/Content/bootstrap.css",
