@@ -100,7 +100,7 @@ namespace _02_Filmy.Controllers
       // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
       [HttpPost]
       [ValidateAntiForgeryToken]
-      public ActionResult Nowy([Bind(Include = "ID,Tytul,DataWydania,Kategoria,Cena")] Film film)
+      public ActionResult Nowy([Bind(Include = "ID,Tytul,DataWydania,Kategoria,Cena,Ocena")] Film film)
       {
          if (ModelState.IsValid)
          {
@@ -132,7 +132,7 @@ namespace _02_Filmy.Controllers
       // To protect from overposting attacks, please enable the specific properties you want to bind to, for         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
       [HttpPost]
       [ValidateAntiForgeryToken]
-      public ActionResult Edycja([Bind(Include = "ID,Tytul,DataWydania,Kategoria,Cena")] Film film)
+      public ActionResult Edycja([Bind(Include = "ID,Tytul,DataWydania,Kategoria,Cena,Ocena")] Film film)
       {
          if (ModelState.IsValid)
          {

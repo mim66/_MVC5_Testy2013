@@ -21,9 +21,8 @@ namespace _02_Filmy.Models
       public DateTime DataWydania { get; set; }
 
       public string Kategoria { get; set; }
-
       public decimal Cena { get; set; }
-
+      public string Ocena { get; set; }
    }
 
    public class FilmyDBContext : DbContext

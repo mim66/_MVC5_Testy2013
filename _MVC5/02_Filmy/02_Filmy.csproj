@@ -168,6 +168,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201411261640456_Poczatek.cs" />
+    <Compile Include="Migrations\201411261640456_Poczatek.Designer.cs">
+      <DependentUpon>201411261640456_Poczatek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201411261647063_Ocena.cs" />
+    <Compile Include="Migrations\201411261647063_Ocena.Designer.cs">
+      <DependentUpon>201411261647063_Ocena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration - Kopia.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -175,10 +185,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\02_Filmy.mdf" />
-    <Content Include="App_Data\02_Filmy_log.ldf">
-      <DependentUpon>02_Filmy.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-submenu.css" />
     <Content Include="Content\bootstrap-submenu.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -263,13 +269,23 @@
     <Content Include="Views\Filmy\Index.cshtml" />
     <Content Include="Scripts\jquery.validate.globalize.min.js.map" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201411261640456_Poczatek.resx">
+      <DependentUpon>201411261640456_Poczatek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411261647063_Ocena.resx">
+      <DependentUpon>201411261647063_Ocena.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
