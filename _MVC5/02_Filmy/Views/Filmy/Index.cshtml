@@ -8,6 +8,12 @@
 
 <p>
     @Html.ActionLink("Utwórz nowy", "Nowy")
+    @using (Html.BeginForm("Index", "Filmy", FormMethod.Get))
+    {
+      <p>Kategoria: @Html.DropDownList("kategoriaFilmu", "Wszystkie")
+      Tytuł: @Html.TextBox("szukaneSlowo")
+      <input type="submit" value="Filtruj" /></p>
+    }
 </p>
 <table class="table">
     <tr>

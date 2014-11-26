@@ -6,11 +6,17 @@
 **************************************
 
 **************************************
-
+The Html.BeginForm helper creates an opening <form>  tag. 
 
 **************************************
-Aby korzystaæ z lokalnych ustawieñ jêzykowych zainstaluj z nuGet'a jquery-globalize
-Install-Package jquery-globalize
+Aby korzystaæ z lokalnych ustawieñ jêzykowych zainstaluj z nuGet'a:
+	Install-Package jquery-globalize
+	Install-Package jQuery.Validation.Globalize
+i do webconfiga dodaj wpis: 
+	 <system.web>
+		 <globalization culture ="pl-PL" />
+		 <!--elements removed for clarity-->
+	  </system.web>
 
 **************************************
 @Html.AntiForgeryToken()  generates a hidden form anti-forgery token that must match in the Edit method of the Movies controller.
