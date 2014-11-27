@@ -12,16 +12,27 @@ namespace _02_Filmy.Models
    public class Film
    {
       public int ID { get; set; }
+
+      [StringLength(60,MinimumLength=3)]
       public string Tytul { get; set; }
 
       [Display(Name = "Data Wydania")]
       [DataType(DataType.Date)]
-      //[DisplayFormat(DataFormatString="{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+      [DisplayFormat(DataFormatString="{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
       //[DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
       public DateTime DataWydania { get; set; }
 
+      [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
+      [Required]
+      [StringLength(30)]
       public string Kategoria { get; set; }
+      
+      [Range(1,100)]
+      [DataType(DataType.Currency)]
       public decimal Cena { get; set; }
+
+      [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
+      [StringLength(5)]
       public string Ocena { get; set; }
    }
 
