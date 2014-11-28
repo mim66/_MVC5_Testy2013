@@ -176,6 +176,10 @@
     <Compile Include="Migrations\201411261647063_Ocena.Designer.cs">
       <DependentUpon>201411261647063_Ocena.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201411270757261_DataAnnotations.cs" />
+    <Compile Include="Migrations\201411270757261_DataAnnotations.Designer.cs">
+      <DependentUpon>201411270757261_DataAnnotations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration - Kopia.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -285,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201411261647063_Ocena.resx">
       <DependentUpon>201411261647063_Ocena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411270757261_DataAnnotations.resx">
+      <DependentUpon>201411270757261_DataAnnotations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

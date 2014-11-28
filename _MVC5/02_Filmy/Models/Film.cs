@@ -16,10 +16,12 @@ namespace _02_Filmy.Models
       [StringLength(60,MinimumLength=3)]
       public string Tytul { get; set; }
 
-      [Display(Name = "Data Wydania")]
-      [DataType(DataType.Date)]
-      [DisplayFormat(DataFormatString="{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+      //[Display(Name = "Data Wydania")]
+      //[DataType(DataType.Date)]
+      [Display(Name = "Data Wydania"), DataType(DataType.Date)]
+      [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
       //[DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
+      //[Range(typeof(DateTime), "1/1/1966", "1/1/2020")]
       public DateTime DataWydania { get; set; }
 
       [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
@@ -27,8 +29,9 @@ namespace _02_Filmy.Models
       [StringLength(30)]
       public string Kategoria { get; set; }
       
-      [Range(1,100)]
-      [DataType(DataType.Currency)]
+      //[Range(1,100)]
+      //[DataType(DataType.Currency)]
+      [Range(1, 100),DataType(DataType.Currency)]
       public decimal Cena { get; set; }
 
       [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
