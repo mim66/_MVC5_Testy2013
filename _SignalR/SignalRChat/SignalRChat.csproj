@@ -90,6 +90,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChatHub2\ChatHub2Page.html" />
     <Content Include="First.txt" />
     <Content Include="1_HtmlPage.html" />
     <Content Include="Index.html" />
