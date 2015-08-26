@@ -4,19 +4,15 @@ using System.Linq;
 using System.Web;
 using Microsoft.AspNet.SignalR;
 
-namespace SignalRChat
+//namespace SignalR_Mvc5.Hubs
+namespace SignalR_Mvc5
 {
    public class ChatHub : Hub
    {
       public void Send(string name, string message)
       {
-         // Call the broadcastMessage method to update clients.
-         Clients.All.broadcastMessage(name, message);
+         // Call the addNewMessageToPage method to update clients.
+         Clients.All.addNewMessageToPage(name, message);
       }
-
-      //public void Hello()
-      //{
-      //   Clients.All.hello();
-      //}
    }
 }
