@@ -16,6 +16,7 @@ namespace _06_SR_Code_Zhuyun_Dai
          FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
          RouteConfig.RegisterRoutes(RouteTable.Routes);
          BundleConfig.RegisterBundles(BundleTable.Bundles);
+
       }
    }
 }

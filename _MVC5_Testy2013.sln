@@ -52,7 +52,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2_SignalR_Mvc5", "_SignalR\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_SignalR.StockTicker", "_SignalR\SignalR.StockTicker\4_SignalR.StockTicker.csproj", "{0C093443-1CBC-45BD-834E-6AAC5D4AF395}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5_SignalR_Mvc5_T1", "_SignalR\5_SignalR_Mvc5_T1\5_SignalR_Mvc5_T1.csproj", "{92CA078F-0644-47E5-A7A7-C253DED1A531}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_SignalR_Mvc5_T1", "_SignalR\5_SignalR_Mvc5_T1\05_SignalR_Mvc5_T1.csproj", "{92CA078F-0644-47E5-A7A7-C253DED1A531}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_SR_Code_Zhuyun_Dai", "_SignalR\06_SR_Code_Zhuyun_Dai\06_SR_Code_Zhuyun_Dai.csproj", "{E7682FB3-1A72-47B0-96D5-CE3C3A219772}"
 EndProject
