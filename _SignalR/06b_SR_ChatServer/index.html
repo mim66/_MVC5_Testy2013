@@ -1,0 +1,73 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <title>SignalR Echo</title>
+   <script src="myhubs/hubs"></script>
+   <script src="Scripts/jquery-2.1.4.min.js"></script>
+   <script src="Scripts/jquery.signalR-2.2.0.min.js"></script>
+</head>
+<body>
+   <table>
+      <tr>
+         <td><span>Server Time: </span></td>
+         <td><span id="serverTime">N/A</span>         </td>
+         <td><input type="button" value="Refresh" id="refreshServerTime" />         </td>
+      </tr>
+      <tr>
+         <td><span>Name:</span></td>
+         <td><input type="text" id="name" />         </td>
+         <td />
+         <td />
+      </tr>
+      <tr>
+         <td><span>Message:</span></td>
+         <td><input type="text" id="msg" />         </td>
+         <td><input type="button" value="Send" id="send" />         </td>
+         <td />
+      </tr>
+   </table>
+   <ul id="messages"></ul>
+      
+   <script type="text/javascript">
+      function htmlEncode(value) {
+         return $("<div/>").text(value).html();
+      }
+      function addMsg(msg) {
+         $("#messages").append("<li>" + htmlEncode(msg) + "</li>");
+      }
+      $(function () {
+         // Connect Hubs with the generated proxy
+         var timeHubProxy = $.connection.PascalCasedMyDateTimeHub;
+         var chatHubProxy = $.connection.myChatHub;
+         // register client function to be called by server
+         chatHubProxy.client.appendnewmessage = function (clientName, message) {            
+            addMsg(clientName + ": " + message);
+         };
+         // start the hub connection
+         addMsg("Łączenie z hubem...");
+         var polacz = function () {
+            addMsg("Połączono z hubem...");
+            $("#refreshServerTime").click(function () {
+               timeHubProxy.server.PascalCasedGetServerDateTime()
+               .done(function (serverTime) {
+                  $("#serverTime").text(serverTime);
+               });
+            });
+            $("#send").click(function () {
+               chatHubProxy.server.broadcastMessage($("#name").val(), $("#msg").val());
+            });
+         };
+         var blad = function () {
+            addMsg("Brak połącznia z hubem...")
+         }
+         $.connection.hub.start()
+            .done(polacz)
+            .fail(blad);
+
+      });
+
+      
+   </script>
+</body>
+</html>
