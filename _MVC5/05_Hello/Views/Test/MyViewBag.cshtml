@@ -1,0 +1,24 @@
+﻿@{
+   Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta name="viewport" content="width=device-width" />
+   <title>MyView2</title>
+</head>
+<body>
+   <div>
+      @{
+         _05_Hello.Models.Employee emp = (_05_Hello.Models.Employee)ViewBag.Employee;
+      }
+      <b>Employee Details</b><br />
+      Employee Name: @emp.FirstName @emp.LastName<br />
+      Employee Salary: @emp.Salary.ToString("C")
+
+
+   </div>
+</body>
+</html>
