@@ -1,0 +1,29 @@
+﻿@{
+   Layout = null;
+   //StronglyTypedView
+   
+}
+@Model _05_Hello.Models.Employee
+
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta name="viewport" content="width=device-width" />
+   <title>GetStronglyTypedView</title>
+</head>
+<body>
+   <div>
+      @*@{
+         _05_Hello.Models.Employee emp = (_05_Hello.Models.Employee)ViewData["Employee"];
+
+      }*@
+
+      <b>Employee Details</b><br />
+      Employee Name: @Model.FirstName @Model.LastName<br />
+      Employee Salary: @Model.Salary.ToString("C")
+
+
+   </div>
+</body>
+</html>

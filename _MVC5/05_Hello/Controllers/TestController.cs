@@ -10,16 +10,23 @@ namespace _05_Hello.Controllers
 
    public class TestController : Controller
    {
-      public ActionResult GetViewData() {
+
+      public ActionResult GetStronglyTypedView() {
          Employee emp = NewEmployee();
          ViewData["Employee"] = emp;
-         return View("MyViewData");
+         return View("MyStronglyTypedView");
       }
 
       public ActionResult GetViewBag() {
          Employee emp = NewEmployee();
          ViewBag.Employee = emp;
          return View("MyViewBag");
+      }
+
+      public ActionResult GetViewData() {
+         Employee emp = NewEmployee();
+         ViewData["Employee"] = emp;
+         return View("MyViewData");
       }
 
       private Employee NewEmployee() {
