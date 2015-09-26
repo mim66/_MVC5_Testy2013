@@ -162,7 +162,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Test\MyViewData.cshtml" />
     <Content Include="Views\Test\MyViewBag.cshtml" />
-    <Content Include="Views\Test\GetStronglyTypedView.cshtml" />
+    <Content Include="Views\Test\MyStronglyTypedView.cshtml" />
+    <Content Include="Views\Test\GetEmployeeViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

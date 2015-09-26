@@ -11,10 +11,27 @@ namespace _05_Hello.Controllers
    public class TestController : Controller
    {
 
+      public ActionResult GetEmployeeViewModel() {
+         Employee emp = NewEmployee();
+         
+         ViewModel.EmployeeViewModel vmEmp = new ViewModel.EmployeeViewModel();
+         vmEmp.EmployeeName = emp.FirstName +" "+ emp.FirstName;
+         vmEmp.Salary = emp.Salary.ToString("C");
+         if (emp.Salary > 15000) { 
+            vmEmp.SalaryColor = "yellow";
+         }
+         else { 
+            vmEmp.SalaryColor = "green";
+         }
+         vmEmp.UserName = "Admin";
+         return View(vmEmp);
+      }
+
+
       public ActionResult GetStronglyTypedView() {
          Employee emp = NewEmployee();
          ViewData["Employee"] = emp;
-         return View("MyStronglyTypedView");
+         return View("MyStronglyTypedView", emp);
       }
 
       public ActionResult GetViewBag() {
