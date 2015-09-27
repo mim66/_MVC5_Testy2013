@@ -119,7 +119,9 @@
     </Compile>
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EmployeeBusinessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\EmployeeListViewModel.cs" />
     <Compile Include="ViewModel\EmployeeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
