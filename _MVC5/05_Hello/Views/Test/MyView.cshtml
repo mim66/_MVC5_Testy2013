@@ -1,0 +1,25 @@
+﻿@using _05_Hello.ViewModel
+@model PracownikListViewModel
+@{
+    ViewBag.Title = "MyView";
+}
+
+<h2>MyView</h2>
+
+Hello @Model.Uzytkownik
+<hr />
+<div>
+   <table>
+      <tr>
+         <th>Nazwa</th>
+         <th>Pensja</th>
+      </tr>
+      @foreach (PracownikViewModel item in @Model.Pracownicy) {
+         <tr>
+            <td>@item.Pracownik</td>
+            <td style="background-color:@item.PensjaKolor">@item.Pensja</td>
+         </tr>
+      }
+   </table>
+
+</div>

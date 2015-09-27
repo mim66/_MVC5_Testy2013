@@ -12,11 +12,11 @@
 <body>
    <div>
       @{
-         _05_Hello.Models.Employee emp = (_05_Hello.Models.Employee)ViewBag.Employee;
+         _05_Hello.Models.Pracownik prac = (_05_Hello.Models.Pracownik)ViewBag.Pracownik;
       }
-      <b>Employee Details</b><br />
-      Employee Name: @emp.FirstName @emp.LastName<br />
-      Employee Salary: @emp.Salary.ToString("C")
+      <b>Pracownik</b><br />
+      Nazwa: @prac.Imie @prac.Nazwisko<br />
+      Pensja: @prac.Pensja.ToString("C")
 
 
    </div>

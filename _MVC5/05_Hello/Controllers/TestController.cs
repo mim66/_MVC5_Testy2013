@@ -12,78 +12,56 @@ namespace _05_Hello.Controllers
    public class TestController : Controller
    {
 
-      public ActionResult GetEmployeeViewModel() {
-         EmployeeListViewModel empListViewModel = new EmployeeListViewModel();
-         EmployeeBusinessLayer empBal           = new EmployeeBusinessLayer();
-         List<Employee> employees               = empBal.GetEmployees();
-         List<EmployeeViewModel> empViewModels  = new List<EmployeeViewModel>();
+      public ActionResult GetView() {
+         PracownikListViewModel pracListViewModel = new PracownikListViewModel();
+         PracownikBusinessLayer pracBl           = new PracownikBusinessLayer();
+         List<Pracownik> pracownicy              = pracBl.PobierzPracownikow();
+         List<PracownikViewModel> pracViewModels = new List<PracownikViewModel>();
 
-         foreach (Employee emp in employees) {
-            EmployeeViewModel empViewModel = new EmployeeViewModel();
-            empViewModel.EmployeeName = emp.FirstName +" "+emp.LastName;
-            empViewModel.Salary = emp.Salary.ToString("C");
-            if (emp.Salary > 15000) { 
-               empViewModel.SalaryColor = "yellow";
-            }
-            else {
-               empViewModel.SalaryColor = "green";
-            }
-            empViewModels.Add(empViewModel);
+         foreach (Pracownik emp in pracownicy) {
+            PracownikViewModel pracViewModel = new PracownikViewModel();
+            pracViewModel.Pracownik          = emp.Imie +" "+emp.Nazwisko;
+            pracViewModel.Pensja             = emp.Pensja.ToString("C");
+            pracViewModel.PensjaKolor        = emp.Pensja > 15000 ? "yellow": "green";
+            pracViewModels.Add(pracViewModel);
          }
-         empListViewModel.Employees = empViewModels;
-         empListViewModel.UserName  = "Admin";
+         pracListViewModel.Pracownicy = pracViewModels;
+         pracListViewModel.Uzytkownik = "Admin";         
 
-         return View(empListViewModel);
+         return View("MyView", pracListViewModel);
       }
 
-      //public ActionResult GetEmployeeViewModel() {
-      //   Employee emp = NewEmployee();
-         
-      //   ViewModel.EmployeeViewModel vmEmp = new ViewModel.EmployeeViewModel();
-      //   vmEmp.EmployeeName = emp.FirstName +" "+ emp.FirstName;
-      //   vmEmp.Salary = emp.Salary.ToString("C");
-      //   if (emp.Salary > 15000) { 
-      //      vmEmp.SalaryColor = "yellow";
-      //   }
-      //   else { 
-      //      vmEmp.SalaryColor = "green";
-      //   }
-      //   //vmEmp.UserName = "Admin";
-      //   return View(vmEmp);
-      //}
-
-
       public ActionResult GetStronglyTypedView() {
-         Employee emp = NewEmployee();
-         ViewData["Employee"] = emp;
-         return View("MyStronglyTypedView", emp);
+         Pracownik prac = NewEmployee();
+         ViewData["Pracownik"] = prac;
+         return View("MyStronglyTypedView", prac);
       }
 
       public ActionResult GetViewBag() {
-         Employee emp = NewEmployee();
-         ViewBag.Employee = emp;
+         Pracownik prac = NewEmployee();
+         ViewBag.Pracownik = prac;
          return View("MyViewBag");
       }
 
       public ActionResult GetViewData() {
-         Employee emp = NewEmployee();
-         ViewData["Employee"] = emp;
+         Pracownik prac = NewEmployee();
+         ViewData["Pracownik"] = prac;
          return View("MyViewData");
       }
 
-      private Employee NewEmployee() {
-         Employee emp = new Employee();
-         emp.FirstName = "Imie";
-         emp.LastName = "Nazwisko";
-         emp.Salary = 2000;
-         return emp;
+      private Pracownik NewEmployee() {
+         Pracownik prac = new Pracownik();
+         prac.Imie = "Imie";
+         prac.Nazwisko = "Nazwisko";
+         prac.Pensja = 2000;
+         return prac;
       }
 
-      public Customer GetCustomer() {
-         Customer c = new Customer();
-         c.CustomerName = "Klient1";
-         c.Address = "Adres1";
-         return c;
+      public Klient GetCustomer() {
+         Klient k = new Klient();
+         k.KlientNazwa = "Klient1";
+         k.Addres = "Adres1";
+         return k;
       }
 
    }

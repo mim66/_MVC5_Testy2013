@@ -13,11 +13,11 @@
 <body>
     <div> 
       @{
-         _05_Hello.Models.Employee emp = (_05_Hello.Models.Employee)ViewData["Employee"];
+         _05_Hello.Models.Pracownik emp = (_05_Hello.Models.Pracownik)ViewData["Pracownik"];
       }
-      <b>Employee Details</b><br />
-       Employee Name: @emp.FirstName @emp.LastName<br />
-       Employee Salary: @emp.Salary.ToString("C") <br />
+      <b>Pracownik</b><br />
+       Nazwa: @emp.Imie @emp.Nazwisko<br />
+       Pensja: @emp.Pensja.ToString("C") <br />
        
 
     </div>

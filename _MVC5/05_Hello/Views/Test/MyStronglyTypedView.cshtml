@@ -1,5 +1,5 @@
 ﻿@using _05_Hello.Models
-@Model Employee
+@model Pracownik
 
 @{   
    Layout = null;     
@@ -13,16 +13,16 @@
 </head>
 <body>
    <div>
-      <b>Employee Details</b><br />
-      Employee Name: @Model.FirstName @Model.LastName<br />
-      @if (@Model.Salary>15000)	{
+      <b>Pracownik</b><br />
+      Nazwa: @Model.Imie @Model.Nazwisko<br />
+      @if (@Model.Pensja>15000)	{
 		   <span style="background-color: yellow">
-            Employee Salary: @Model.Salary.ToString("C")
+            Pensja: @Model.Pensja.ToString("C")
          </span>
 	   }
       else { 
          <span style="background-color:green">
-            Employee Salary: @Model.Salary.ToString("C")
+            Pensja: @Model.Pensja.ToString("C")
          </span>
       }
       
