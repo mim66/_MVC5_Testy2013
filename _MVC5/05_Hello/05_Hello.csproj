@@ -121,12 +121,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\PracownikController.cs" />
     <Compile Include="DAL\MvcHelloDB.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Configuration - Kopia.cs" />
+    <Compile Include="Configuration - Seed.cs" />
     <Compile Include="Migrations\201509291221089_Poczatek.cs" />
     <Compile Include="Migrations\201509291221089_Poczatek.Designer.cs">
       <DependentUpon>201509291221089_Poczatek.cs</DependentUpon>
@@ -177,10 +177,10 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Test\MyViewData.cshtml" />
-    <Content Include="Views\Test\MyViewBag.cshtml" />
-    <Content Include="Views\Test\MyStronglyTypedView.cshtml" />
-    <Content Include="Views\Test\MyView.cshtml" />
+    <Content Include="Views\Pracownik\MyViewData.cshtml" />
+    <Content Include="Views\Pracownik\MyViewBag.cshtml" />
+    <Content Include="Views\Pracownik\MyStronglyTypedView.cshtml" />
+    <Content Include="Views\Pracownik\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
