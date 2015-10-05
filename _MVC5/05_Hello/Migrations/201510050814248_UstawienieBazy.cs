@@ -3,7 +3,7 @@ namespace _05_Hello.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Poczatek : DbMigration
+    public partial class UstawienieBazy : DbMigration
     {
         public override void Up()
         {

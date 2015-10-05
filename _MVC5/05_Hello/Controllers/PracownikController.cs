@@ -27,10 +27,9 @@ namespace _05_Hello.Controllers
             pracViewModel.PensjaKolor = emp.Pensja > 15000 ? "yellow" : "green";
             pracViewModels.Add(pracViewModel);
          }
-         pracListViewModel.Pracownicy = pracViewModels;
-         pracListViewModel.Uzytkownik = "Admin";
 
-         return View(pracListViewModel);
+         pracListViewModel.Pracownicy = pracViewModels;
+         return View("Index",pracListViewModel);
       }
 
       //public ActionResult GetView ()

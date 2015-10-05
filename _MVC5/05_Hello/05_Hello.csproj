@@ -127,9 +127,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Configuration - Seed.cs" />
-    <Compile Include="Migrations\201509291221089_Poczatek.cs" />
-    <Compile Include="Migrations\201509291221089_Poczatek.Designer.cs">
-      <DependentUpon>201509291221089_Poczatek.cs</DependentUpon>
+    <Compile Include="Migrations\201510050814248_UstawienieBazy.cs" />
+    <Compile Include="Migrations\201510050814248_UstawienieBazy.Designer.cs">
+      <DependentUpon>201510050814248_UstawienieBazy.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Klient.cs" />
@@ -193,8 +193,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201509291221089_Poczatek.resx">
-      <DependentUpon>201509291221089_Poczatek.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510050814248_UstawienieBazy.resx">
+      <DependentUpon>201510050814248_UstawienieBazy.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
