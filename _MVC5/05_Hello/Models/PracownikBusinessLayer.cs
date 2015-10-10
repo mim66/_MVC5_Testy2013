@@ -8,6 +8,13 @@ namespace _05_Hello.Models
 {
    public class PracownikBusinessLayer
    {
+      public Pracownik Zapisz(Pracownik p) { 
+         MvcHelloDB dal = new MvcHelloDB();
+         dal.Pracownicy.Add(p);
+         dal.SaveChanges();
+         return p;
+      }
+
       public List<Pracownik> PobierzPracownikow() { 
 
          MvcHelloDB context = new MvcHelloDB();

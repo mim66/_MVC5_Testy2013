@@ -131,6 +131,10 @@
     <Compile Include="Migrations\201510050814248_UstawienieBazy.Designer.cs">
       <DependentUpon>201510050814248_UstawienieBazy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510100442024_ZmianyTblPrac.cs" />
+    <Compile Include="Migrations\201510100442024_ZmianyTblPrac.Designer.cs">
+      <DependentUpon>201510100442024_ZmianyTblPrac.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Klient.cs" />
     <Compile Include="Models\Pracownik.cs" />
@@ -181,6 +185,9 @@
     <Content Include="Views\Pracownik\MyViewBag.cshtml" />
     <Content Include="Views\Pracownik\MyStronglyTypedView.cshtml" />
     <Content Include="Views\Pracownik\Index.cshtml" />
+    <Content Include="Views\Pracownik\DodajPrac.cshtml" />
+    <Content Include="Views\Pracownik\Zapisz.cshtml" />
+    <Content Include="Views\Pracownik\Dodaj2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -195,6 +202,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201510050814248_UstawienieBazy.resx">
       <DependentUpon>201510050814248_UstawienieBazy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510100442024_ZmianyTblPrac.resx">
+      <DependentUpon>201510100442024_ZmianyTblPrac.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
