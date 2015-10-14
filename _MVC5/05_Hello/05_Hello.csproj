@@ -143,6 +143,10 @@
     <Compile Include="Migrations\201510141004159_Zmiana2.Designer.cs">
       <DependentUpon>201510141004159_Zmiana2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510141103124_WalidacjaPoStronieKlienta.cs" />
+    <Compile Include="Migrations\201510141103124_WalidacjaPoStronieKlienta.Designer.cs">
+      <DependentUpon>201510141103124_WalidacjaPoStronieKlienta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Klient.cs" />
     <Compile Include="Models\Pracownik.cs" />
@@ -174,6 +178,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Walidacje.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -220,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510141004159_Zmiana2.resx">
       <DependentUpon>201510141004159_Zmiana2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510141103124_WalidacjaPoStronieKlienta.resx">
+      <DependentUpon>201510141103124_WalidacjaPoStronieKlienta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

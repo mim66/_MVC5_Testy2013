@@ -12,15 +12,16 @@ namespace _05_Hello.Models
       public int PracId { get; set; }
       
       // walidacja niestandardowa
-      [Imie_Val]
+      //[Imie_Val]
       public string Imie         { get; set; }
 
-      [Required(ErrorMessage = "Proszę podać nazwisko:")]
-      [StringLength(30, ErrorMessage = "Długość nazwiska nie może być większa niż 30 znaków.")]
+      //[Required(ErrorMessage = "Proszę podać nazwisko:")]
+      //[StringLength(30, ErrorMessage = "Długość nazwiska nie może być większa niż 30 znaków.")]
+      [StringLength(30)]
       public string Nazwisko { get; set; }
       
-      [Required(ErrorMessage = "Proszę podać zarobki:")]
-      [Range(5000,50000,ErrorMessage="Proszę podać zarobki z przedziału: 5000 - 50000")]
+      //[Required(ErrorMessage = "Proszę podać zarobki:")]
+      //[Range(5000,50000,ErrorMessage="Proszę podać zarobki z przedziału: 5000 - 50000")]
       public int Pensja { get; set; }
    }
    
