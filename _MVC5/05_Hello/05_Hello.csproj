@@ -135,11 +135,20 @@
     <Compile Include="Migrations\201510100442024_ZmianyTblPrac.Designer.cs">
       <DependentUpon>201510100442024_ZmianyTblPrac.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510131751558_Zmiany.cs" />
+    <Compile Include="Migrations\201510131751558_Zmiany.Designer.cs">
+      <DependentUpon>201510131751558_Zmiany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510141004159_Zmiana2.cs" />
+    <Compile Include="Migrations\201510141004159_Zmiana2.Designer.cs">
+      <DependentUpon>201510141004159_Zmiana2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Klient.cs" />
     <Compile Include="Models\Pracownik.cs" />
     <Compile Include="Models\PracownikBusinessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\DodajPracViewModel.cs" />
     <Compile Include="ViewModel\PracownikListViewModel.cs" />
     <Compile Include="ViewModel\PracownikViewModel.cs" />
   </ItemGroup>
@@ -205,6 +214,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510100442024_ZmianyTblPrac.resx">
       <DependentUpon>201510100442024_ZmianyTblPrac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510131751558_Zmiany.resx">
+      <DependentUpon>201510131751558_Zmiany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510141004159_Zmiana2.resx">
+      <DependentUpon>201510141004159_Zmiana2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -19,12 +19,12 @@ namespace _05_Hello.Controllers
          List<Pracownik> pracownicy = pracBl.PobierzPracownikow();
          List<PracownikViewModel> pracViewModels = new List<PracownikViewModel>();
 
-         foreach (Pracownik emp in pracownicy)
+         foreach (Pracownik prac in pracownicy)
          {
             PracownikViewModel pracViewModel = new PracownikViewModel();
-            pracViewModel.Pracownik = emp.Imie + " " + emp.Nazwisko;
-            pracViewModel.Pensja = emp.Pensja.ToString("C");
-            pracViewModel.PensjaKolor = emp.Pensja > 15000 ? "yellow" : "green";
+            pracViewModel.Pracownik = prac.Imie + " " + prac.Nazwisko;
+            pracViewModel.Pensja = prac.Pensja.ToString(); //prac.Pensja.ToString("C");
+            pracViewModel.PensjaKolor = prac.Pensja > 15000 ? "yellow" : "green";
             pracViewModels.Add(pracViewModel);
          }
 
@@ -33,7 +33,7 @@ namespace _05_Hello.Controllers
       }
 
       public ActionResult Dodaj() {
-         return View("DodajPrac");
+         return View("DodajPrac", new DodajPracViewModel());
       }
 
       public ActionResult Zapisz(Pracownik p, string bnSubmit) {
@@ -45,7 +45,16 @@ namespace _05_Hello.Controllers
                   return RedirectToAction("Index");
                }
                else {
-                        return View("DodajPrac");
+                  DodajPracViewModel vm = new DodajPracViewModel();
+                  vm.Imie = p.Imie;
+                  vm.Nazwisko = p.Nazwisko;
+                  // if Pensja jest zadeklarowana jako 'int? Pensja' tylko wówczas można używać  HasValue
+                  //if (p.Pensja.HasValue) {
+                  //   vm.Pensja = p.Pensja.ToString();
+                  //}
+                  //else  
+                     vm.Pensja = ModelState["Pensja"].Value.AttemptedValue;
+                  return View("DodajPrac",vm);
                }
             case "Cancel":
                return RedirectToAction("Index");

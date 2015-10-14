@@ -18,7 +18,10 @@ namespace _05_Hello.Models
       [Required(ErrorMessage = "Proszę podać nazwisko:")]
       [StringLength(30, ErrorMessage = "Długość nazwiska nie może być większa niż 30 znaków.")]
       public string Nazwisko { get; set; }
-      public int Pensja   { get; set; }
+      
+      [Required(ErrorMessage = "Proszę podać zarobki:")]
+      [Range(5000,50000,ErrorMessage="Proszę podać zarobki z przedziału: 5000 - 50000")]
+      public int Pensja { get; set; }
    }
    
    public class Imie_Val: ValidationAttribute
