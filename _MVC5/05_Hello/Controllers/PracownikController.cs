@@ -12,10 +12,14 @@ namespace _05_Hello.Controllers
    public class PracownikController : Controller
    {
 
-      [Authorize]
+      // zamiast autoryzacji na poziomie kontrolera dodałem globalną 
+      // w FilterConfig w metodzie RegisterGlobalFilters przez wpis 
+      // filters.Add(new AuthorizeAttribute());
+      // [Authorize] 
       public ActionResult Index()
       {
          PracownikListViewModel pracListViewModel = new PracownikListViewModel();
+         pracListViewModel.NazwaUsera = User.Identity.Name;
          PracownikBusinessLayer pracBl = new PracownikBusinessLayer();
          List<Pracownik> pracownicy = pracBl.PobierzPracownikow();
          List<PracownikViewModel> pracViewModels = new List<PracownikViewModel>();
