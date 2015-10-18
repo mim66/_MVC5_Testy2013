@@ -1,0 +1,29 @@
+﻿@model _05_Hello.Models.UserDetale
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<div>
+   
+   @Html.ValidationMessage("BledyWalidacji", new { style = "color:red;" })
+   @using (@Html.BeginForm("Zaloguj", "Autentykacja", FormMethod.Post))
+   {
+      <table>
+         <tr>
+            <td>@Html.LabelFor(c => c.NazwaUsera)</td>
+            <td>@Html.TextBoxFor(x => x.NazwaUsera)</td>
+         </tr>
+         <tr>
+            <td>@Html.LabelFor(c => c.Haslo)</td>
+            <td>@Html.TextBoxFor(x => x.Haslo)</td>
+         </tr>
+      </table>
+      <input type="submit" name="bnSubmit" value="Login" />
+
+   }
+
+
+</div>

@@ -16,10 +16,9 @@ namespace _05_Hello.Models
       }
 
       public List<Pracownik> PobierzPracownikow() { 
-
          MvcHelloDB context = new MvcHelloDB();
          return context.Pracownicy.ToList();
-
+         #region
          //List<Pracownik> listaPrac = new List<Pracownik>();
          //Pracownik emp = new Pracownik();
          //emp.Imie = "johnson";
@@ -40,6 +39,15 @@ namespace _05_Hello.Models
          //listaPrac.Add(emp);
 
          //return listaPrac;
-      } 
+         #endregion
+      }
+
+      public bool IsValidUser(UserDetale u) {
+         if (u.NazwaUsera == "Admin" && u.Haslo == "Admin")  
+            return true;
+         else
+            return false;
+      }
+
    }
 }

@@ -12,6 +12,7 @@ namespace _05_Hello.Controllers
    public class PracownikController : Controller
    {
 
+      [Authorize]
       public ActionResult Index()
       {
          PracownikListViewModel pracListViewModel = new PracownikListViewModel();
