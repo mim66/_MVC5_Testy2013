@@ -1,14 +1,11 @@
 ﻿@model _05_Hello.Models.Uzytkownik
-
-@{
-    ViewBag.Title = "Login";
-}
+@{    ViewBag.Title = "Login";}
 
 <h2>Login</h2>
 
 <div>
    
-   @*20*@
+   @*20-21*@
    @using (@Html.BeginForm("Zaloguj", "Autentykacja", FormMethod.Post))
    {
       <table>
@@ -43,3 +40,9 @@
       <input type="submit" name="bnSubmit" value="Login" />
    *@
 </div>
+
+@*21 *@
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
