@@ -42,7 +42,7 @@ namespace _05_Hello.Models
          #endregion
       }
 
-      public bool IsValidUser(UserDetale u) {
+      public bool IsValidUser(Uzytkownik u) {
          if (u.NazwaUsera == "Admin" && u.Haslo == "Admin")  
             return true;
          else

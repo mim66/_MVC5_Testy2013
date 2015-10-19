@@ -1,4 +1,4 @@
-﻿@model _05_Hello.Models.UserDetale
+﻿@model _05_Hello.Models.Uzytkownik
 
 @{
     ViewBag.Title = "Login";
@@ -8,6 +8,25 @@
 
 <div>
    
+   @*20*@
+   @using (@Html.BeginForm("Zaloguj", "Autentykacja", FormMethod.Post))
+   {
+      <table>
+         <tr>
+            <td>@Html.LabelFor(c => c.NazwaUsera)</td>
+            <td>@Html.TextBoxFor(x => x.NazwaUsera)</td>
+            <td>@Html.ValidationMessageFor(x => x.NazwaUsera)</td>
+         </tr>
+         <tr>
+            <td>@Html.LabelFor(c => c.Haslo)</td>
+            <td>@Html.TextBoxFor(x => x.Haslo)</td>
+            <td>@Html.ValidationMessageFor(x => x.Haslo)</td>
+         </tr>
+      </table>
+      <input type="submit" name="bnSubmit" value="Login" />
+   }
+
+   @*17-19
    @Html.ValidationMessage("BledyWalidacji", new { style = "color:red;" })
    @using (@Html.BeginForm("Zaloguj", "Autentykacja", FormMethod.Post))
    {
@@ -22,8 +41,5 @@
          </tr>
       </table>
       <input type="submit" name="bnSubmit" value="Login" />
-
-   }
-
-
+   *@
 </div>
