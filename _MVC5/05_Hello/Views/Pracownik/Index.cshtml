@@ -10,19 +10,29 @@
    <a href="~/Autentykacja/Wyloguj">Wyloguj</a>
 </div>
 <hr />
+   @* 0-22
+     <a href="~/Pracownik/Dodaj">Dodaj pracownika</a>*@
+   @{
+      Html.RenderPartial("Pobierz_DodajPracLink");
+   }
 <div>
-   <a href="~/Pracownik/Dodaj">Dodaj pracownika</a>
-   <table>
+   <table border="1">
       <tr>
          <th>Nazwa</th>
          <th>Pensja</th>
       </tr>
-      @foreach (PracownikViewModel item in @Model.Pracownicy) {
+      @foreach (PracownikViewModel item in @Model.Pracownicy)
+      {
          <tr>
             <td>@item.Pracownik</td>
             <td style="background-color:@item.PensjaKolor">@item.Pensja</td>
          </tr>
       }
    </table>
+
+   @*22 PartialView Stopka *@
+   @{
+      Html.RenderPartial("Stopka", Model.StopkaDane);
+   }
 
 </div>

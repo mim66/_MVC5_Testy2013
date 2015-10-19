@@ -42,12 +42,22 @@ namespace _05_Hello.Models
          #endregion
       }
 
-      public bool IsValidUser(Uzytkownik u) {
-         if (u.NazwaUsera == "Admin" && u.Haslo == "Admin")  
-            return true;
+      public StatusUzytkownika WalidujUzytkownika(Uzytkownik u)
+      {
+         if (u.NazwaUsera == "Admin" && u.Haslo == "Admin")
+            return StatusUzytkownika.UwierzytelnionyAdmin;
+         else if (u.NazwaUsera == "marek" && u.Haslo == "marek")
+            return StatusUzytkownika.UwierzytelnionyUser;
          else
-            return false;
+            return StatusUzytkownika.NieUwierzytelnionyUser;
       }
+
+      //public bool IsValidUser(Uzytkownik u) {
+      //   if (u.NazwaUsera == "Admin" && u.Haslo == "Admin")  
+      //      return true;
+      //   else
+      //      return false;
+      //}
 
    }
 }

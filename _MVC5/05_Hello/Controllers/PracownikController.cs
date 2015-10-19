@@ -13,13 +13,14 @@ namespace _05_Hello.Controllers
    {
 
       // zamiast autoryzacji na poziomie kontrolera dodałem globalną 
-      // w FilterConfig w metodzie RegisterGlobalFilters przez wpis 
-      // filters.Add(new AuthorizeAttribute());
+      //    w FilterConfig w metodzie RegisterGlobalFilters przez wpis 
+      //    filters.Add(new AuthorizeAttribute());
       // [Authorize] 
       public ActionResult Index()
       {
          PracownikListViewModel pracListViewModel = new PracownikListViewModel();
          pracListViewModel.NazwaUsera = User.Identity.Name;
+
          PracownikBusinessLayer pracBl = new PracownikBusinessLayer();
          List<Pracownik> pracownicy = pracBl.PobierzPracownikow();
          List<PracownikViewModel> pracViewModels = new List<PracownikViewModel>();
@@ -34,11 +35,28 @@ namespace _05_Hello.Controllers
          }
 
          pracListViewModel.Pracownicy = pracViewModels;
+         
+         //22
+         pracListViewModel.StopkaDane = new StopkaViewModel();
+         pracListViewModel.StopkaDane.NazwaFirmy = "StepByStepSchools";
+         pracListViewModel.StopkaDane.Rok = DateTime.Now.Year.ToString();
          return View("Index",pracListViewModel);
       }
 
       public ActionResult Dodaj() {
          return View("DodajPrac", new DodajPracViewModel());
+      }
+
+      //23
+      public ActionResult Pobierz_DodajPracLink() {
+         if (Convert.ToBoolean(Session["CzyAdmin"]))
+	      {
+		      return PartialView("DodajPracLink");
+	      }
+         else
+         {
+            return new EmptyResult();
+         }
       }
 
       public ActionResult Zapisz(Pracownik p, string bnSubmit) {
