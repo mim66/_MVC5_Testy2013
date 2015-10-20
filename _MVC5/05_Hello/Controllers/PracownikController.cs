@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using _05_Hello.Models;
 using _05_Hello.ViewModel;
+using _05_Hello.Filtry;
 
 namespace _05_Hello.Controllers
 {
@@ -43,6 +44,7 @@ namespace _05_Hello.Controllers
          return View("Index",pracListViewModel);
       }
 
+      [FiltrAdmina]                                   //23b
       public ActionResult Dodaj() {
          return View("DodajPrac", new DodajPracViewModel());
       }
@@ -59,6 +61,7 @@ namespace _05_Hello.Controllers
          }
       }
 
+      [FiltrAdmina]                                   //23b
       public ActionResult Zapisz(Pracownik p, string bnSubmit) {
          switch (bnSubmit) {
             case "Zapisz pracownika":

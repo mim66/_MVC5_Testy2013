@@ -124,6 +124,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PracownikController.cs" />
     <Compile Include="DAL\MvcHelloDB.cs" />
+    <Compile Include="Filtry\FiltrAdmina.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
