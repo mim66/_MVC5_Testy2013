@@ -17,10 +17,10 @@ namespace _05_Hello.Controllers
       //    w FilterConfig w metodzie RegisterGlobalFilters przez wpis 
       //    filters.Add(new AuthorizeAttribute());
       // [Authorize] 
+      [FiltrNaglStopka]      //25 
       public ActionResult Index()
       {
          PracownikListViewModel pracListViewModel = new PracownikListViewModel();
-         pracListViewModel.NazwaUsera = User.Identity.Name;
 
          PracownikBusinessLayer pracBl = new PracownikBusinessLayer();
          List<Pracownik> pracownicy = pracBl.PobierzPracownikow();
@@ -34,34 +34,25 @@ namespace _05_Hello.Controllers
             pracViewModel.PensjaKolor = prac.Pensja > 15000 ? "yellow" : "green";
             pracViewModels.Add(pracViewModel);
          }
-
          pracListViewModel.Pracownicy = pracViewModels;
-         
-         //22
-         pracListViewModel.StopkaDane = new StopkaViewModel();
-         pracListViewModel.StopkaDane.NazwaFirmy = "StepByStepSchools";
-         pracListViewModel.StopkaDane.Rok = DateTime.Now.Year.ToString();
          return View("Index",pracListViewModel);
       }
 
       [FiltrAdmina]                                   //23b
+      [FiltrNaglStopka]                               //25 
       public ActionResult Dodaj() {
-         return View("DodajPrac", new DodajPracViewModel());
+         //return View("DodajPrac", new DodajPracViewModel());    // -25
+         DodajPracViewModel dodajListVM = new DodajPracViewModel();
+         //dodajListVM.NazwaUsera = User.Identity.Name.ToString();
+         //dodajListVM.StopkaDane = new StopkaViewModel();
+         //dodajListVM.StopkaDane.NazwaFirmy = "StepByStepSchools";//Can be set to dynamic value
+         //dodajListVM.StopkaDane.Rok = DateTime.Now.Year.ToString();
+         return View("DodajPrac", dodajListVM);
       }
 
-      //23
-      public ActionResult Pobierz_DodajPracLink() {
-         if (Convert.ToBoolean(Session["CzyAdmin"]))
-	      {
-		      return PartialView("DodajPracLink");
-	      }
-         else
-         {
-            return new EmptyResult();
-         }
-      }
 
       [FiltrAdmina]                                   //23b
+      [FiltrNaglStopka]                               //25 
       public ActionResult Zapisz(Pracownik p, string bnSubmit) {
          switch (bnSubmit) {
             case "Zapisz pracownika":
@@ -74,12 +65,13 @@ namespace _05_Hello.Controllers
                   DodajPracViewModel vm = new DodajPracViewModel();
                   vm.Imie = p.Imie;
                   vm.Nazwisko = p.Nazwisko;
-                  // if Pensja jest zadeklarowana jako 'int? Pensja' tylko wówczas można używać  HasValue
-                  //if (p.Pensja.HasValue) {
-                  //   vm.Pensja = p.Pensja.ToString();
-                  //}
-                  //else  
-                     vm.Pensja = ModelState["Pensja"].Value.AttemptedValue;
+                  vm.Pensja = ModelState["Pensja"].Value.AttemptedValue;
+                  vm.StopkaDane =new StopkaViewModel();
+
+                  vm.StopkaDane = new StopkaViewModel();
+                  vm.StopkaDane.NazwaFirmy = "StepByStepSchools";//Can be set to dynamic value
+                  vm.StopkaDane.Rok = DateTime.Now.Year.ToString();
+                  vm.NazwaUsera = User.Identity.Name;
                   return View("DodajPrac",vm);
                }
             case "Cancel":
@@ -87,6 +79,17 @@ namespace _05_Hello.Controllers
          }
          return new EmptyResult();
       }
+
+      //23
+      public ActionResult Pobierz_DodajPracLink() {
+         if (Convert.ToBoolean(Session["CzyAdmin"])) {
+            return PartialView("DodajPracLink");
+         }
+         else {
+            return new EmptyResult();
+         }
+      }
+
 
       //public ActionResult Zapisz() {
       // In this situation we have following three solutions

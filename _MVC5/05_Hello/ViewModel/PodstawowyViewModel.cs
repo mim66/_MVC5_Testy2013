@@ -10,4 +10,5 @@ namespace _05_Hello.ViewModel
       public string NazwaUsera { get; set; }
       public StopkaViewModel StopkaDane { get; set; }
    }
+
 }

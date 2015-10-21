@@ -44,7 +44,7 @@ namespace _05_Hello.Models
 
       public StatusUzytkownika WalidujUzytkownika(Uzytkownik u)
       {
-         if (u.NazwaUsera == "Admin" && u.Haslo == "Admin")
+         if (u.NazwaUsera == "admin" && u.Haslo == "admin")
             return StatusUzytkownika.UwierzytelnionyAdmin;
          else if (u.NazwaUsera == "marek" && u.Haslo == "marek")
             return StatusUzytkownika.UwierzytelnionyUser;
