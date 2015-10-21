@@ -1,38 +1,29 @@
 ﻿@using _05_Hello.ViewModel
 @model PracownikListViewModel
 @{
-    ViewBag.Title = "Pracownicy";
+   Layout = "~/Views/Shared/MyLayout.cshtml";
 }
 
-<h2>MyView</h2>
+@section SekcjaTytul { 
+   Pracownicy  
+}
+@section Zawartosc {
+   <div>
 
-<div style="text-align:right"> Cześć, @Model.NazwaUsera 
-   <a href="~/Autentykacja/Wyloguj">Wyloguj</a>
-</div>
-<hr />
-   @* 0-22
-     <a href="~/Pracownik/Dodaj">Dodaj pracownika</a>*@
-   @{
-      Html.RenderAction("Pobierz_DodajPracLink");
-   }
-<div>
-   <table border="1">
-      <tr>
-         <th>Nazwa</th>
-         <th>Pensja</th>
-      </tr>
-      @foreach (PracownikViewModel item in @Model.Pracownicy)
-      {
-         <tr>
-            <td>@item.Pracownik</td>
-            <td style="background-color:@item.PensjaKolor">@item.Pensja</td>
-         </tr>
+      @{
+         Html.RenderAction("Pobierz_DodajPracLink");
       }
-   </table>
-
-   @*22 PartialView Stopka *@
-   @{
-      Html.RenderPartial("Stopka", Model.StopkaDane);
-   }
-
-</div>
+      <table border="1">
+         <tr>
+            <th>Nazwa</th>
+            <th>Pensja</th>
+         </tr>
+         @foreach (PracownikViewModel item in @Model.Pracownicy) {
+            <tr>
+               <td>@item.Pracownik</td>
+               <td style="background-color:@item.PensjaKolor">@item.Pensja</td>
+            </tr>
+         }
+      </table>
+   </div>
+}

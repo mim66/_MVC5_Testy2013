@@ -1,0 +1,23 @@
+﻿@using _05_Hello.ViewModel
+@model PodstawowyViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@RenderSection("SekcjaTytul")</title>
+    @RenderSection("SekcjaNagl", false)
+</head>
+<body>
+   <div style="text-align:right">
+      Cześć, @Model.NazwaUsera     
+      <a href="~/Autentykacja/Wyloguj">Wyloguj</a>
+   </div>
+   <hr />
+   <div>
+      @RenderSection("Zawartosc")
+   </div>
+   @Html.Partial("Stopka", Model.StopkaDane)
+</body>
+</html>
