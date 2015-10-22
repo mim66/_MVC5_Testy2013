@@ -1,17 +1,19 @@
 ﻿using _05_Hello.Filtry;
 using _05_Hello.Models;
 using _05_Hello.ViewModel;
-using System;
+//using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web;
+using System.Threading;
+using System.Threading.Tasks;
+//using System.Web;
 using System.Web.Mvc;
-
+      
 namespace _05_Hello.Controllers
-{
-   public class PrzesylanieHurtoweController : Controller
-   {
+{     
+   public class PrzesylanieHurtoweController : AsyncController
+   {  
       [FiltrNaglStopka]
       [FiltrAdmina]
       public ActionResult Index() {
@@ -19,8 +21,11 @@ namespace _05_Hello.Controllers
       }
 
       [FiltrAdmina]
-      public ActionResult Przeslij(PrzeslaniePlikuViewModel model) {
-         List<Pracownik> pracownicy = PobierzPracownikow(model);
+      public async Task<ActionResult> Przeslij(PrzeslaniePlikuViewModel model) {
+         int t1 = Thread.CurrentThread.ManagedThreadId;
+         List<Pracownik> pracownicy = 
+           await Task.Factory.StartNew<List<Pracownik>>(()=>PobierzPracownikow(model));
+         int t2 = Thread.CurrentThread.ManagedThreadId;
          PracownikBusinessLayer bl = new PracownikBusinessLayer();
          bl.PrzeslijPracownikow(pracownicy);
          return RedirectToAction("Index", "Pracownik");
