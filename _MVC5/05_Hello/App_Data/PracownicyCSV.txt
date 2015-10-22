@@ -1,0 +1,3 @@
+﻿Imie,Nazwisko,Pensja
+Imie1,Nazwisko1,19800
+Imie2,Nazwisko2,14600

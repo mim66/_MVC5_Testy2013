@@ -52,12 +52,11 @@ namespace _05_Hello.Models
             return StatusUzytkownika.NieUwierzytelnionyUser;
       }
 
-      //public bool IsValidUser(Uzytkownik u) {
-      //   if (u.NazwaUsera == "Admin" && u.Haslo == "Admin")  
-      //      return true;
-      //   else
-      //      return false;
-      //}
+      public void PrzeslijPracownikow(List<Pracownik> pracownicy) { 
+         MvcHelloDB context = new MvcHelloDB();
+         context.Pracownicy.AddRange(pracownicy);
+         context.SaveChanges();
+      }
 
    }
 }

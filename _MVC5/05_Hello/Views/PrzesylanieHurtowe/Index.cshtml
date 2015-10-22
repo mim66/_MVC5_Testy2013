@@ -1,0 +1,22 @@
+﻿@using _05_Hello.ViewModel
+@model PrzeslaniePlikuViewModel
+@{
+   Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+@section SekcjaTytul{
+   Przesylanie Hurtowe - Bulk upload
+}
+@section Zawartosc{
+   <div>
+      <a href="/Pracownik/Index">Powrót</a>
+      <form action="/PrzesylanieHurtowe/Przeslij" method="post" enctype="multipart/form-data">
+         Wybierz plik: <input type="file" name="przeslijPlik" value="" />
+         <input type="submit" name="name" value="Przeslij" />
+      </form>
+      @*<form action="/PrzesylanieHurtowe/Upload" method="post" enctype="multipart/form-data">
+         Wybierz plik: <input type="file" name="fileUpload" value="" />
+         <input type="submit" name="name" value="Upload" />
+      </form>*@
+   </div>
+}

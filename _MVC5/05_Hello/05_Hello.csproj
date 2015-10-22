@@ -121,10 +121,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AutentykacjaController.cs" />
+    <Compile Include="Controllers\PrzesylanieHurtoweController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PracownikController.cs" />
     <Compile Include="DAL\MvcHelloDB.cs" />
     <Compile Include="Filtry\FiltrAdmina.cs" />
+    <Compile Include="Filtry\FiltrNaglStopka.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -161,12 +163,14 @@
     <Compile Include="Models\Uzytkownik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\DodajPracViewModel.cs" />
+    <Compile Include="ViewModel\PrzeslaniePlikuViewModel.cs" />
     <Compile Include="ViewModel\PodstawowyViewModel.cs" />
     <Compile Include="ViewModel\StopkaViewModel.cs" />
     <Compile Include="ViewModel\PracownikListViewModel.cs" />
     <Compile Include="ViewModel\PracownikViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\PracownicyCSV.txt" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -216,10 +220,9 @@
     <Content Include="Views\Shared\Stopka.cshtml" />
     <Content Include="Views\Pracownik\DodajPracLink.cshtml" />
     <Content Include="Views\Shared\MyLayout.cshtml" />
+    <Content Include="Views\PrzesylanieHurtowe\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
